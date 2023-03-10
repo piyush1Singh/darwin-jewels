@@ -13,7 +13,7 @@ const items = [
   >
     <div className="container">
       <div className="py-lg-17">
-        <p className="">Shop Our Set</p>
+        <p className="slider-p">Shop Our Set</p>
         <h2 className="fs-md-68">
           Majestic Bloom <br />
           Gemstone
@@ -34,7 +34,7 @@ const items = [
   >
     <div className="container">
       <div className="py-lg-17">
-        <p className="">Shop Our Set</p>
+        <p className="slider-p">Shop Our Set</p>
         <h2 className="fs-md-68">
           Majestic Bloom <br />
           Gemstone
@@ -55,7 +55,7 @@ const items = [
   >
     <div className="container">
       <div className="py-lg-17">
-        <p className="">Shop Our Set</p>
+        <p className="slider-p">Shop Our Set</p>
         <h2 className="fs-md-68">
           Majestic Bloom <br />
           Gemstone
@@ -80,6 +80,7 @@ const MainSlider = () => (
     touchTracking={false}
     disableDotsControls
     disableButtonsControls
+    mouseTracking
     items={items}
   />
 );

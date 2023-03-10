@@ -1,4 +1,5 @@
 import React from 'react'
+import Category from '../component/Category'
 import MainSlider from '../component/MainSlider'
 import Sidebar from '../component/Sidebar'
 
@@ -7,6 +8,7 @@ const Index = () => {
     <div>
       <Sidebar />
       <MainSlider />
+      <Category />
     </div>
   )
 }
