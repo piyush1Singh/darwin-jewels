@@ -1,6 +1,8 @@
 import React from 'react'
 import Category from '../component/Category'
+import Collection from '../component/Collection'
 import MainSlider from '../component/MainSlider'
+import SeasonalCollection from '../component/SeasonalCollection'
 import Sidebar from '../component/Sidebar'
 
 const Index = () => {
@@ -9,6 +11,8 @@ const Index = () => {
       <Sidebar />
       <MainSlider />
       <Category />
+      <Collection />
+      <SeasonalCollection />
     </div>
   )
 }
