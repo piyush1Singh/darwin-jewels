@@ -387,3 +387,222 @@ div.container-xl {
   background-color: #e2e6ea !important;
   border-color: #dae0e5 !important;
 }
+
+
+/* Feature Product Start */
+.pt-lg-13, .py-lg-13 {
+  padding-top: 6.25rem !important;
+}
+.pb-lg-10, .py-lg-10 {
+  padding-bottom: 4.375rem !important;
+}
+.pt-11, .py-11 {
+  padding-top: 5rem !important;
+}
+
+.mb-6, .my-6 {
+  margin-bottom: 1.875rem !important;
+}.shadow-none {
+  box-shadow: none !important;
+}
+.tab-content > .active {
+  display: block;
+}
+.fade {
+  transition: opacity 0.15s linear;
+}
+.position-relative {
+  position: relative !important;
+}
+.p-3 {
+  padding: 1rem !important;
+}
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+  border-radius: 0;
+}
+.badge-primary {
+    color: #fff;
+    background-color: #4e7661;
+}
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 3px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.mb-auto, .my-auto {
+  margin-bottom: auto !important;
+}
+.mt-auto, .my-auto {
+  margin-top: auto !important;
+}
+.w-100 {
+  width: 100% !important;
+}
+.product .content-change-vertical a {
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  opacity: 0;
+}
+.product .add-to-cart {
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out, visibility 0.4s 0.1s ease-out, opacity 0.4s 0.15s ease-out, -webkit-transform 0.4s 0.1s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out, visibility 0.4s 0.1s ease-out, opacity 0.4s 0.15s ease-out, transform 0.4s 0.1s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out, visibility 0.4s 0.1s ease-out, opacity 0.4s 0.15s ease-out, transform 0.4s 0.1s ease-out, -webkit-transform 0.4s 0.1s ease-out;
+}
+.h-48px {
+  height: 48px !important;
+}
+.w-48px {
+  width: 48px !important;
+}
+.ml-auto, .mx-auto {
+  margin-left: auto !important;
+}
+.mb-2, .my-2 {
+  margin-bottom: 0.625rem !important;
+}
+svg.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.fs-24 {
+  font-size: 24px !important;
+}svg.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
+}
+.fs-12 {
+  font-size: 12px !important;
+}
+.card-text:last-child {
+  margin-bottom: 0;
+}
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.list-inline-item {
+  display: inline-block;
+}
+.product .content-change-vertical a {
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  opacity: 0;
+}
+.product .content-change-horizontal a {
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  opacity: 0;
+}
+.product .btn {
+  transition: opacity 0.4s, -webkit-transform 0.4s;
+  transition: opacity 0.4s, transform 0.4s;
+  transition: opacity 0.4s, transform 0.4s, -webkit-transform 0.4s;
+  opacity: 0;
+  -webkit-transform: translateY(15px);
+  transform: translateY(15px);
+}
+.product:hover .content-change-vertical a {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+.product:hover .content-change-horizontal a {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+.product:hover .btn {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.product .preview {
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.15s ease-out, opacity 0.4s 0.15s ease-out,
+    -webkit-transform 0.4s 0.15s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.15s ease-out, opacity 0.4s 0.15s ease-out,
+    transform 0.4s 0.15s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.15s ease-out, opacity 0.4s 0.15s ease-out,
+    transform 0.4s 0.15s ease-out, -webkit-transform 0.4s 0.15s ease-out;
+}
+.product .add-to-wishlist {
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.2s ease-out, opacity 0.4s 0.2s ease-out,
+    -webkit-transform 0.4s 0.2s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.2s ease-out, opacity 0.4s 0.2s ease-out,
+    transform 0.4s 0.2s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.2s ease-out, opacity 0.4s 0.2s ease-out,
+    transform 0.4s 0.2s ease-out, -webkit-transform 0.4s 0.2s ease-out;
+}
+.product .add-to-compare {
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.25s ease-out, opacity 0.4s 0.25s ease-out,
+    -webkit-transform 0.4s 0.25s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.25s ease-out, opacity 0.4s 0.25s ease-out,
+    transform 0.4s 0.25s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.25s ease-out, opacity 0.4s 0.25s ease-out,
+    transform 0.4s 0.25s ease-out, -webkit-transform 0.4s 0.25s ease-out;
+}
+.product .add-to-cart {
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.1s ease-out, opacity 0.4s 0.15s ease-out,
+    -webkit-transform 0.4s 0.1s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.1s ease-out, opacity 0.4s 0.15s ease-out,
+    transform 0.4s 0.1s ease-out;
+  transition: color 0.4s 0.001s ease-out, background 0.4s 0.001s ease-out,
+    visibility 0.4s 0.1s ease-out, opacity 0.4s 0.15s ease-out,
+    transform 0.4s 0.1s ease-out, -webkit-transform 0.4s 0.1s ease-out;
+}
+.product .content-change-vertical a {
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  opacity: 0;
+}
+.product .content-change-vertical a {
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  opacity: 0;
+}
+
+
+
+
+
+/* Feature Product End */
