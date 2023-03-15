@@ -1,13 +1,13 @@
-import React from 'react'
-import "./assets/App.css"
-import Index from './pages/Index'
+import React from "react";
+import "./assets/App.css";
+import Index from "./pages/Index";
 
 const App = () => {
   return (
     <div>
-<Index />
+      <Index />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

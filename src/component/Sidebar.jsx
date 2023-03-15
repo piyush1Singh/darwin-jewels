@@ -54,18 +54,18 @@ const Sidebar = () => {
           </div>
           <div className="icon">
             <ul className="d-flex list-style-none">
-              <li t className="icon-button" title="Login">
-                <a href="">
+              <li className="icon-button" title="Login">
+                <a href="#">
                   <AiOutlineUser />
                 </a>
               </li>
               <li className="icon-button" title="Wishlist">
-                <a href="">
+                <a href="#">
                   <AiOutlineHeart />
                 </a>
               </li>
               <li className="icon-button" title="Cart">
-                <a href="  ">
+                <a href="#">
                   <AiOutlineShoppingCart />
                 </a>
               </li>

@@ -27,7 +27,6 @@ const Category = () => {
         ></div>
         <div className="card-img-overlay d-inline-flex flex-column px-7 pt-7 pb-6 justify-content-end">
           <h3 className="card-title center-text-color fs-26">Charms</h3>
-          <div></div>
         </div>
       </div>
     </div>,
@@ -55,7 +54,6 @@ const Category = () => {
         ></div>
         <div className="card-img-overlay d-inline-flex flex-column px-7 pt-7 pb-6 justify-content-end">
           <h3 className="card-title center-text-color fs-26">Rings</h3>
-          <div></div>
         </div>
       </div>
     </div>,
@@ -69,7 +67,6 @@ const Category = () => {
         ></div>
         <div className="card-img-overlay d-inline-flex flex-column px-7 pt-7 pb-6 justify-content-end">
           <h3 className="card-title center-text-color fs-26">Earings</h3>
-          <div></div>
         </div>
       </div>
     </div>,
@@ -83,7 +80,6 @@ const Category = () => {
         ></div>
         <div className="card-img-overlay d-inline-flex flex-column px-7 pt-7 pb-6 justify-content-end">
           <h3 className="card-title center-text-color fs-26">Necklaces</h3>
-          <div></div>
         </div>
       </div>
     </div>,
@@ -98,7 +94,6 @@ const Category = () => {
         ></div>
         <div className="card-img-overlay d-inline-flex flex-column px-7 pt-7 pb-6 justify-content-end">
           <h3 className="card-title center-text-color fs-26">Mangalsutra</h3>
-          <div></div>
         </div>
       </div>
     </div>,

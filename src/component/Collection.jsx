@@ -44,7 +44,7 @@ const Collection = () => {
               >
                 <a href="" className="hover-zoom-in hover-shine">
                   <img
-                   src="/src/assets/images/collection/collection-02.jpg"
+                    src="/src/assets/images/collection/collection-02.jpg"
                     alt="Skincare"
                   />
                 </a>
@@ -62,7 +62,7 @@ const Collection = () => {
               >
                 <a href="" className="hover-zoom-in hover-shine">
                   <img
-                   src="/src/assets/images/collection/collection-03.jpg"
+                    src="/src/assets/images/collection/collection-03.jpg"
                     alt="Accessories"
                   />
                 </a>
@@ -80,7 +80,7 @@ const Collection = () => {
               >
                 <a href="" className="hover-zoom-in hover-shine">
                   <img
-                     src="/src/assets/images/collection/collection-01.jpg"
+                    src="/src/assets/images/collection/collection-01.jpg"
                     alt="Haircare"
                   />
                 </a>
