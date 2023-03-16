@@ -89,7 +89,7 @@ const FeatureProduct = () => {
                         <div className="card-body px-0 pt-4 text-center">
                           <p className="card-text font-weight-bold fs-16 mb-1 text-secondary">
                             <span className="fs-13 font-weight-500 text-decoration-through text-body pr-1">
-                              $39.00
+                              $3,98,000
                             </span>
                             <span>₹ 3,58,755</span>
                           </p>
