@@ -1,88 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-const items = [
-  <div
-    className="item"
-    data-value="1"
-    style={{
-      backgroundImage: "url(./src/assets/images/banner/bg-slider-01.jpg)",
-    }}
-  >
-    <div className="container">
-      <div className="py-lg-17">
-        <p className="slider-p">Shop Our Set</p>
-        <h2 className="fs-md-68">
-          Majestic Bloom <br />
-          Gemstone
-        </h2>
-        <a className="">
-          Discover Now
-          <AiOutlineArrowRight />
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    className="item"
-    data-value="1"
-    style={{
-      backgroundImage: "url(./src/assets/images/banner/bg-slider-02.jpg)",
-    }}
-  >
-    <div className="container">
-      <div className="py-lg-17">
-        <p className="slider-p">Shop Our Set</p>
-        <h2 className="fs-md-68">
-          Majestic Bloom <br />
-          Gemstone
-        </h2>
-        <a className="">
-          Discover Now
-          <AiOutlineArrowRight />
-        </a>
-      </div>
-    </div>
-  </div>,
-  <div
-    className="item"
-    data-value="1"
-    style={{
-      backgroundImage: "url(./src/assets/images/banner/bg-slider-03.jpg)",
-    }}
-  >
-    <div className="container">
-      <div className="py-lg-17">
-        <p className="slider-p">Shop Our Set</p>
-        <h2 className="fs-md-68">
-          Majestic Bloom <br />
-          Gemstone
-        </h2>
-        <a className="">
-          Discover Now
-          <AiOutlineArrowRight />
-        </a>
-      </div>
-    </div>
-  </div>,
-];
+const MainSlider = () => {
+  const [banner, setBanner] = useState([]);
 
-const MainSlider = () => (
-  <AliceCarousel
-    autoPlay
-    autoPlayStrategy="none"
-    autoPlayInterval={2000}
-    animationDuration={2000}
-    animationType="fadein"
-    infinite
-    touchTracking={false}
-    disableDotsControls
-    disableButtonsControls
-    mouseTracking
-    items={items}
-  />
-);
+  const fetchBanner = async () => {
+    let url = await fetch(
+      "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Banner/fetchallBanner.php"
+    );
+    let data = await url.json();
+    // console.log(data);
+    setBanner(data);
+  };
+
+  useEffect(() => {
+    fetchBanner();
+  }, []);
+
+  const renderCarouselItems = () => {
+    console.log(banner);
+    return banner.map((item) => {
+      console.log(item[0]);
+      return (
+        <div key={item}>
+          <div
+            style={{
+              backgroundImage: `url('Admin-panel/Dashboard-admin/src/assets/bannerImages/${item[3]}')`
+            }}
+          />
+          <p>{item[1]}</p>
+          <p>{item[2]}</p>
+        </div>
+      );
+    });
+  };
+  return (
+    <AliceCarousel
+      items={renderCarouselItems()}
+      responsive={{ 0: { items: 1 }, 1024: { items: 1 } }}
+      autoPlay
+      infinite
+      disableDotsControls
+      disableButtonsControls
+      autoPlayInterval={3000}
+    />
+  );
+};
 
 export default MainSlider;
