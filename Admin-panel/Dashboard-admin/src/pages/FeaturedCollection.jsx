@@ -260,7 +260,8 @@ const FeaturedCollection = () => {
             </tr>
           </thead>
           <tbody>
-            {collection?.map((value, key) => (
+          {collection.length > 0 ? (
+            collection?.map((value, key) => (
               <tr>
                 <td>{value[0]}</td>
                 <td>{value[1]}</td>
@@ -297,7 +298,12 @@ const FeaturedCollection = () => {
                   </button>
                 </td>
               </tr>
-            ))}
+            )))
+            : <tr>
+                <td className="text-center" colSpan={6}>
+                  <h3 className="bold text-danger">No data Found</h3>
+                </td>
+              </tr>}
           </tbody>
         </table>
       </div>
