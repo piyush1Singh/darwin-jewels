@@ -1,12 +1,13 @@
 import React from "react";
 import "./assets/App.css";
 import Index from "./pages/Index";
+import CategoryProvider from "./CategoryContext";
 
 const App = () => {
   return (
-    <div>
+    <CategoryProvider>
       <Index />
-    </div>
+    </CategoryProvider>
   );
 };
 

@@ -21,7 +21,7 @@ const MainSlider = () => {
   const renderCarouselItems = () => {
     return banner.map((item) => {
       return (
-        <section class="mx-0 slick-slider dots-inner-center custom-slider-02 slider">
+        <section cla="mx-0 slick-slider dots-inner-center custom-slider-02 slider">
           <div
             className="item"
             style={{

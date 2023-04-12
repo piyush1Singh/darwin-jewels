@@ -6,11 +6,10 @@ import {
   AiOutlineHeart,
   AiOutlineUser,
 } from "react-icons/ai";
-
-
-
+import { useCategory } from "../CategoryContext";
 
 const Sidebar = () => {
+  const { category } = useCategory();
   return (
     <div>
       <Stickybar />
@@ -34,6 +33,13 @@ const Sidebar = () => {
           </div>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                 {/* {category?.map((value) => (
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    {value[1]}
+                  </a>
+                </li>
+              ))} */}
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
                   Home
@@ -54,6 +60,7 @@ const Sidebar = () => {
                   Contact
                 </a>
               </li>
+         
             </ul>
           </div>
           <div className="icon">
