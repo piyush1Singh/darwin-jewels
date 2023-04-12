@@ -11,7 +11,6 @@ const MainSlider = () => {
       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Banner/fetchallBanner.php"
     );
     let data = await url.json();
-    // console.log(data);
     setBanner(data);
   };
 
@@ -23,28 +22,29 @@ const MainSlider = () => {
     return banner.map((item) => {
       return (
         <section class="mx-0 slick-slider dots-inner-center custom-slider-02 slider">
-
-        <div
-    className="item"
-    style={{
-      backgroundImage: `url(../../Admin-panel/Dashboard-admin/src/assets/bannerImages/${item[3]})`,
-    }}
-  >
-    <div className="container">
-      <div className="py-lg-17">
-        <p className="slider-p"> {item[1]}</p>
-        <h2 className="fs-md-68" style={{overflow:"visible", width:"50%"}}>
-         {item[2]}
-        </h2>
-        <a className="">
-          Discover Now
-          {/* <AiOutlineArrowRight /> */}
-        </a>
-      </div>
-    </div>
-  </div>
+          <div
+            className="item"
+            style={{
+              backgroundImage: `url(../../Admin-panel/Dashboard-admin/src/assets/bannerImages/${item[3]})`,
+            }}
+          >
+            <div className="container">
+              <div className="py-lg-17">
+                <p className="slider-p"> {item[1]}</p>
+                <h2
+                  className="fs-md-68"
+                  style={{ overflow: "visible", width: "50%" }}
+                >
+                  {item[2]}
+                </h2>
+                <a className="">
+                  Discover Now
+                  <AiOutlineArrowRight />
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
-        
       );
     });
   };
