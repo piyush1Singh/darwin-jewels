@@ -2253,3 +2253,16 @@ body {
 .text-crossed{
   text-decoration: line-through
 }
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-modal-header-padding);
+  border-bottom: 0px !important; 
+  border-top-left-radius:0px !important;
+ border-top-right-radius: 0px !important;
+}
+.border-top{
+  border-top: 1px;
+}

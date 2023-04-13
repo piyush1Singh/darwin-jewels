@@ -84,6 +84,21 @@ const Sidebar = () => {
           </div>
         </div>
       </nav>
+      <div className="topbar d-none d-xl-block border-top">
+        <div className="container text-center">
+          <ul className="list-inline align-items-center mb-0">
+                  {category?.map((value) => (
+                    <li className="list-inline-item mr-5">
+                  <a className="nav-link" href="#">
+                    {value[1]}
+                  </a>
+                </li>
+              ))}
+       
+          </ul>
+        
+        </div>
+      </div>
     </div>
   );
 };
