@@ -437,8 +437,7 @@ const Category = () => {
                 type="file"
                 required
                 name="id"
-                value={categoryImg}
-                onChange={(e) => handleCategoryImg(e)}
+                onChange={handleCategoryImg}
               />
             </div>
             <div className="form-check form-switch">
