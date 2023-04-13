@@ -47,7 +47,7 @@ console.log(props.productId)
                       </a>
                     </div>
                   </div>
-                  <div class="box px-0">
+                  {/* <div class="box px-0">
                     <div class="card p-0 rounded-0 border-0">
                       <a
                         href="images/Necklaces/1/Necklaces_1_500x500.jpg"
@@ -76,9 +76,9 @@ console.log(props.productId)
                         <img src="images/pendent/1.jpg" alt="product gallery" />
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
-                <div class="view-slider-nav mx-n1">
+                {/* <div class="view-slider-nav mx-n1">
                   <div class="box py-4 px-1 cursor-pointer">
                     <img
                       src="images/rings/IMG_20230220_151206.jpg"
@@ -100,7 +100,7 @@ console.log(props.productId)
                   <div class="box py-4 px-1 cursor-pointer">
                     <img src="images/pendent/1.jpg" alt="product gallery" />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div class="col-md-6 pl-xl-6 pr-xl-8">
