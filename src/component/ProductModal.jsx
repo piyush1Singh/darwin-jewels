@@ -1,8 +1,31 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { BsCheckLg } from "react-icons/bs";
 const ProductModal = (props) => {
-  
+  const [cart, setCart] = useState();
+  const [quantity, setQuantity] = useState();
+  const [productCartId, setProductCartId] = useState();
+
+  const saveToCart = async(e,value) => {
+    e.preventDefault();
+    let url =await fetch("http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/addProducttoCart.php",{
+      method:"POST",
+      body:JSON.stringify({
+        id:value,
+        quantity:quantity
+      })
+    })
+    let data =await url.json()
+    setCart(data)
+    console.log(cart)
+  };
+
+
+  // useEffect(() => {
+  //   saveToCart()
+  // }, [])
+
   return (
     <Modal
       className="modal-xxl"
@@ -19,7 +42,6 @@ const ProductModal = (props) => {
                 <div className="position-absolute pos-fixed-top-right z-index-2">
                   <div className="content-change-vertical">
                     <a
-                      
                       data-toggle="tooltip"
                       data-placement="left"
                       title="Add to wishlist"
@@ -32,9 +54,10 @@ const ProductModal = (props) => {
                 <div className="view-slider-for mx-0">
                   <div className="box px-0">
                     <div className="card p-0 rounded-0 border-0">
-                      <a  className="card-img">
+                      <a className="card-img">
                         {Array.isArray(props.productId) &&
                         props.productId.length ? (
+                       
                           <img
                             src={`../../Admin-panel/Dashboard-admin/src/assets/productImages/${props.productId[0][3]}`}
                             alt="product gallery"
@@ -141,7 +164,7 @@ const ProductModal = (props) => {
                     </span>
                   </li>
                 </ul>
-                <a  className="pl-3 border-left border-gray-2 text-body">
+                <a className="pl-3 border-left border-gray-2 text-body">
                   Read 2947 reviews
                 </a>
               </div>
@@ -154,12 +177,11 @@ const ProductModal = (props) => {
               <form>
                 <div className="form-group shop-swatch mb-4 d-flex align-items-center">
                   <span className="font-weight-600 text-secondary mr-4">
-                    Size:{" "}
+                    Size:
                   </span>
                   <ul className="list-inline d-flex justify-content-start mb-0">
                     <li className="list-inline-item mr-2 selected font-weight-600">
                       <a
-                        
                         className="fs-14 p-2 lh-13 d-block swatches-item rounded text-decoration-none border"
                         data-var="full size"
                       >
@@ -168,7 +190,6 @@ const ProductModal = (props) => {
                     </li>
                     <li className="list-inline-item font-weight-600">
                       <a
-                        
                         className="fs-14 p-2 lh-13 d-block swatches-item rounded text-decoration-none border"
                         data-var="mini size"
                       >
@@ -193,13 +214,10 @@ const ProductModal = (props) => {
                       className="text-secondary font-weight-600 mb-3"
                       for="quickview-number"
                     >
-                      Quantity:{" "}
+                      Quantity:
                     </label>
                     <div className="input-group position-relative w-100">
-                      <a
-                        
-                        className="down position-absolute pos-fixed-left-center pl-4 z-index-2"
-                      >
+                      <a className="down position-absolute pos-fixed-left-center pl-4 z-index-2">
                         <i className="far fa-minus"></i>
                       </a>
                       <input
@@ -207,39 +225,38 @@ const ProductModal = (props) => {
                         type="number"
                         id="quickview-number"
                         className="form-control w-100 px-6 text-center input-quality text-secondary h-60 fs-18 font-weight-bold border-0"
-                        value="1"
+                        minLength={1}
+                        onChange={(e) => setQuantity(e.target.value)}
                         required
                       />
-                      <a
-                        
-                        className="up position-absolute pos-fixed-right-center pr-4 z-index-2"
-                      >
+                      <a className="up position-absolute pos-fixed-right-center pr-4 z-index-2">
                         <i className="far fa-plus"></i>
                       </a>
                     </div>
                   </div>
                   <div className="col-sm-8 mb-6 w-100 px-2">
-                    <button
-                      type="submit"
+                  {Array.isArray(props.productId) &&
+                        props.productId.length ? (
+                       
+                          <button
                       className="btn btn-lg fs-18 btn-secondary btn-block h-60 bg-hover-primary border-0"
+                      onClick={(e)=>saveToCart(e,props.productId[0][0])}
                     >
                       Add To Bag
                     </button>
+                        ) : (
+                          <h1>No Id Found</h1>
+                        )}
+                   
                   </div>
                 </div>
               </form>
               <div className="d-flex align-items-center flex-wrap">
-                <a
-                  
-                  className="text-decoration-none font-weight-bold fs-16 mr-6 d-flex align-items-center"
-                >
+                <a className="text-decoration-none font-weight-bold fs-16 mr-6 d-flex align-items-center">
                   <svg className="icon icon-star-light fs-20"></svg>
                   <span className="ml-2">Add to wishlist</span>
                 </a>
-                <a
-                  
-                  className="text-decoration-none font-weight-bold fs-16 d-flex align-items-center"
-                >
+                <a className="text-decoration-none font-weight-bold fs-16 d-flex align-items-center">
                   <svg className="icon icon-ShareNetwork"></svg>
                   <span className="ml-2">Share</span>
                 </a>

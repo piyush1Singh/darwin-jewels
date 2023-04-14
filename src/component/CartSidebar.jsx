@@ -1,7 +1,18 @@
-import React from "react";
+import React,{useEffect} from "react";
 import {RxCross2} from "react-icons/rx"
 
 const CartSidebar = (props) => {
+// const [state, setstate] = useState(initialState)
+
+const fetchCart =async()=>{
+    let url = await fetch("http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php")
+    let data = await url.json()
+    console.log(data)
+}
+useEffect(() => {
+  fetchCart()
+}, [])
+
   return (
     <div>
     <div className={`canvas-sidebar cart-canvas ${props.showCart ? "show" : ""}`}>
