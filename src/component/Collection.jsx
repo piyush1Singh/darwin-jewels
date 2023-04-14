@@ -32,12 +32,12 @@ const Collection = () => {
 
   
           {collection?.map((value,key)=>(
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-3 col-md-6" key={key}>
               <div
                 className="card border-0 mb-lg-0 mb-6 fadeInUp animated"
                 data-animate="fadeInUp"
               >
-                <a href="" className="hover-zoom-in hover-shine">
+                <a  className="hover-zoom-in hover-shine">
                   <img
                     src={`Admin-panel/Dashboard-admin/src/assets/collectionImages/${value[2]}`}
                     alt="Bodycare"
@@ -45,7 +45,7 @@ const Collection = () => {
                 </a>
                 <div className="card-body text-center">
                   <h4 className="card-title mb-1">
-                    <a href="">{value[1]}</a>
+                    <a >{value[1]}</a>
                   </h4>
                 </div>
               </div>

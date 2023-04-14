@@ -145,8 +145,9 @@ const FeatureProduct = () => {
                   aria-labelledby="pills-Skincare-tab"
                 >
                   <div className="row">
-                    {product?.map((value) => (
+                    {product?.map((value,key) => (
                       <div
+                      key={key}
                         className="col-lg-3 col-sm-6 mb-5 fadeInUp animated"
                         data-animate="fadeInUp"
                       >
@@ -164,7 +165,7 @@ const FeatureProduct = () => {
                               </div>
                               <div className="my-auto w-100 content-change-vertical">
                                 <a
-                                  href=""
+                                  
                                   data-toggle="tooltip"
                                   data-placement="left"
                                   title="View Product"
@@ -184,7 +185,7 @@ const FeatureProduct = () => {
                                   </span>
                                 </a>
                                 <a
-                                  href=""
+                                  
                                   data-toggle="tooltip"
                                   data-placement="left"
                                   title=""
@@ -219,7 +220,7 @@ const FeatureProduct = () => {
                               </span>
                             </p>
                             <h2 className="card-title fs-15 font-weight-500 mb-2">
-                              <a href="">{value[1]}</a>
+                              <a >{value[1]}</a>
                             </h2>
                             <div className="d-flex align-items-center justify-content-center flex-wrap">
                               <ul className="list-inline mb-0 lh-1">
