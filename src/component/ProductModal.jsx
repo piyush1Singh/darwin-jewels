@@ -2,6 +2,8 @@ import React, { useState,useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { BsCheckLg } from "react-icons/bs";
+import axios from 'axios';
+
 const ProductModal = (props) => {
   const [cart, setCart] = useState();
   const [quantity, setQuantity] = useState();
@@ -9,23 +11,29 @@ const ProductModal = (props) => {
 
   const saveToCart = async(e,value) => {
     e.preventDefault();
-    let url =await fetch("http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/addProducttoCart.php",{
-      method:"POST",
-      body:JSON.stringify({
-        id:value,
-        quantity:quantity
+    axios.post(
+      'https://darwindevs.com/react-jewels/Api-Calls/Cart/addProducttoCart.php',
+      {
+        id: value,
+        quantity: quantity,
+      },
+      {
+        withCredentials: true, // enable cookies/session support
+      }
+    )
+      .then(response => {
+        // handle the response here
+        console.log(response.data);
       })
-    })
-    let data =await url.json()
-    setCart(data)
-    console.log(cart)
+      .catch(error => {
+        // handle the error here
+        console.error(error);
+      });
+  
   };
 
 
-  // useEffect(() => {
-  //   saveToCart()
-  // }, [])
-
+  
   return (
     <Modal
       className="modal-xxl"
@@ -212,7 +220,7 @@ const ProductModal = (props) => {
                   <div className="col-sm-4 form-group px-2 mb-6">
                     <label
                       className="text-secondary font-weight-600 mb-3"
-                      for="quickview-number"
+                      htmlFor="quickview-number"
                     >
                       Quantity:
                     </label>

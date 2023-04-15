@@ -1,4 +1,5 @@
 <?php
+// phpinfo();die();
 include "database.php";
 header('Access-Control-Allow-Origin: *'); // replace with your React app's domain
 header('Access-Control-Allow-Headers: Content-Type');
