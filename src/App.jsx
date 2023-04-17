@@ -4,6 +4,7 @@ import Index from "./pages/Index";
 import CategoryProvider from "./CategoryContext";
 
 const App = () => {
+
   return (
     <CategoryProvider>
       <Index />

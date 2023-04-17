@@ -1,3 +1,11 @@
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
 .topbar {
   line-height: 40px;
   min-height: 40px;
@@ -2250,19 +2258,4 @@ body {
   .algolia-docsearch-suggestion--content {
   background-color: rgba(208, 189, 236, 0.15) !important;
 }
-.text-crossed{
-  text-decoration: line-through
-}
-.modal-header {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--bs-modal-header-padding);
-  border-bottom: 0px !important; 
-  border-top-left-radius:0px !important;
- border-top-right-radius: 0px !important;
-}
-.border-top{
-  border-top: 1px;
-}
+  

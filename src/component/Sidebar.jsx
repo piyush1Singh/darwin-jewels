@@ -1,6 +1,6 @@
 import React from "react";
 import Stickybar from "./Stickybar";
-import Logo from "../assets/images/DP-Retail.png";
+// import Logo from "../assets/images/DP-Retail.png";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
@@ -21,7 +21,7 @@ const Sidebar = () => {
         <div className="container-fluid">
           <div>
             <a className="navbar-brand" >
-              <img className="" src={Logo} />
+              {/* <img className="" src={Logo} /> */}
             </a>
             <button
               className="navbar-toggler"

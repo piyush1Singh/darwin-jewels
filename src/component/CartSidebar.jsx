@@ -1,17 +1,33 @@
-import React,{useEffect} from "react";
+import React,{useEffect,useState} from "react";
 import {RxCross2} from "react-icons/rx"
+import axios from "axios";
 
 const CartSidebar = (props) => {
-// const [state, setstate] = useState(initialState)
+// const [cart, setCart] = useState([])
 
-const fetchCart =async()=>{
-    let url = await fetch("http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php")
-    let data = await url.json()
-    console.log(data)
-}
-useEffect(() => {
-  fetchCart()
-}, [])
+// const fetchCart =()=>{
+//   // e.preventDefault();
+//   axios
+//     .post(
+//       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php",
+//       {},
+//       {
+//         withCredentials: true, // enable cookies/session support
+//       }
+//     )
+//     .then((response) => {
+//       // handle the response here
+//       setCart(response.data)
+//       console.log(response.data);
+//     })
+//     .catch((error) => {
+//       // handle the error here
+//       console.error(error);
+//     });
+// }
+// useEffect(() => {
+//   fetchCart()
+// }, [])
 
   return (
     <div>

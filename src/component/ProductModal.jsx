@@ -12,7 +12,7 @@ const ProductModal = (props) => {
   const saveToCart = async(e,value) => {
     e.preventDefault();
     axios.post(
-      'https://darwindevs.com/react-jewels/Api-Calls/Cart/addProducttoCart.php',
+      'http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/addProducttoCart.php',
       {
         id: value,
         quantity: quantity,

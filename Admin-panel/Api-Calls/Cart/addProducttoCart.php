@@ -1,35 +1,45 @@
 <?php
-include "database.php";
-header('Access-Control-Allow-Origin: *'); // replace with your React app's domain
-header('Access-Control-Allow-Headers: Content-Type');
-// header('Content-Type: application/json');
-$json = file_get_contents('php://input');
-// $json = json_decode($json);
-// print_r($json);die();
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+    header('Access-Control-Allow-Credentials: true');
+    header('Access-Control-Max-Age: 86400');    // cache for 1 day
+}
 
-
- $user = $_SERVER['REMOTE_ADDR'];
-
- $query= "SELECT * FROM `cart` WHERE user_ip = '$user'";
-
- $result = mysqli_query($conn,$query);
-
- if(mysqli_num_rows($result)> 0){
-    $row = mysqli_fetch_row($result);
-    print_r($row[1]);
-    $ret =json_decode($row[1],true);
-    print_r($ret);
- }else{
-    $json = json_encode($json);
-    $query = "INSERT INTO `cart`(`product_name`, `user_ip`) VALUES ('$json','$user')";
-    if(mysqli_query($conn,$query)){
-        $result = ["status" => "success"];
-        $row = json_encode($result);
-        print_r($row);
-    }else{
-        $result = ["status" => "failed"];
-        $row = json_encode($result);
-        print_r($row);
+// Allow these HTTP methods for the preflight request
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
     }
- }
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS'])) {
+        header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+    }
+    exit(0);
+}
+session_start();
+// session_destroy();
+// exit;
 
+
+$json = file_get_contents('php://input');
+$json = json_decode($json);
+if($json->method=="fetchall"){
+  return  print_r(json_encode($_SESSION['cart']));
+  exit;
+}
+if (!empty($_SESSION)) {
+    array_push($_SESSION['cart'], [
+        'id' => $json->id,
+        'quantity' => $json->quantity,
+    ]);
+    print_r(json_encode($_SESSION['cart']));
+
+} else {
+
+    $_SESSION['cart'] = array();
+    array_push($_SESSION['cart'], [
+        'id' => $json->id,
+        'quantity' => $json->quantity,
+    ]);
+    print_r(json_encode($_SESSION['cart']));die();
+    
+}
