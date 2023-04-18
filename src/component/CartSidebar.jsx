@@ -1,42 +1,120 @@
-import React,{useEffect,useState} from "react";
-import {RxCross2} from "react-icons/rx"
-import axios from "axios";
+import React, { useEffect, useState, useRef } from "react";
+import { RxCross2 } from "react-icons/rx";
+import "../index.css";
+
+
+const fetchCartApi = (id) => {
+  axios
+    .post(
+      "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/incrementQuantitybyId.php",
+      {
+        id: id,
+      },
+      {
+        withCredentials: true, // enable cookies/session support
+      }
+    )
+    .then((response) => {
+      // handle the response here
+      console.log(response.data);
+    })
+    .catch((error) => {
+      // handle the error here
+      console.error(error);
+    });
+  };
+
 
 const CartSidebar = (props) => {
-// const [cart, setCart] = useState([])
+  // console.log(props);
+  const [html, setHtml] = useState("");
+  const htmlRef = useRef("");
 
-// const fetchCart =()=>{
-//   // e.preventDefault();
-//   axios
-//     .post(
-//       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php",
-//       {},
-//       {
-//         withCredentials: true, // enable cookies/session support
-//       }
-//     )
-//     .then((response) => {
-//       // handle the response here
-//       setCart(response.data)
-//       console.log(response.data);
-//     })
-//     .catch((error) => {
-//       // handle the error here
-//       console.error(error);
-//     });
-// }
-// useEffect(() => {
-//   fetchCart()
-// }, [])
+  const incrementCart = (id) => {
+    fetchCartApi(id);
+  };
+
+
+
+  const fetchProductById = async (incrementCart) => {
+    var newData = "";
+    let arr = [];
+    for (const value of props.cart || []) {
+      try {
+        let url = await fetch(
+          "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Product/fetchproductbyid.php",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              id: value.id, // fixed: use value.id instead of value
+            }),
+          }
+        );
+        let data = await url.json();
+        // console.log(data, "data");
+        for (let index = 0; index < data.length; index++) {
+          newData +=
+            "<div class='mb-4 d-flex'>" +
+            "<a href='' class='d-flex align-items-center mr-2 text-muted'><i class='fal fa-times'></i></a>" +
+            "<div class='media w-100'>" +
+            "<div class='w-60px mr-3'>" +
+            "<img src=" +
+            data[index][3] +
+            " alt='atural Coconut Cleansing Oil'>" +
+            "</div>" +
+            "<div class='media-body d-flex'>" +
+            "<div class='cart-price pr-6'>" +
+            " <p class='fs-14 font-weight-bold text-secondary mb-1'><span class='font-weight-500 fs-13 text-line-through text-body mr-1'>$39.00</span>₹" +
+            "      3,58,755" +
+            "     </p>" +
+            "      <a href='product-detail.html' class='text-secondary'>Geometric Fleur CZ Diamond Ring</a>" +
+            "   </div>" +
+            "   <div class='position-relative ml-auto'>" +
+            "       <div class='input-group'>" +
+            "            <a class='down position-absolute pos-fixed-left-center pl-2' > - </a>" +
+            "           <input type='number' class='number-cart w-90px px-6 text-center h-40px bg-input border-0' value=" +
+            value.quantity +
+            " disabled>" +
+            "<a class='up position-absolute pos-fixed-right-center pr-2' onclick='(" +
+            incrementCart +
+            ")(" +
+            data[index][0] +
+            ")'> + </a>" +
+            "         </a>" +
+            "        </div>" +
+            "    </div>" +
+            "  </div>" +
+            " </div>" +
+            " </div>";
+        }
+        htmlRef.current.innerHTML = newData;
+        // setHtml(newData)
+        // console.log(JSON.stringify(newData),'newData')
+        // console.log('sa')
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    return newData;
+  };
+
+  useEffect(() => {
+    fetchProductById(incrementCart);
+  }, [fetchProductById]);
 
   return (
     <div>
-    <div className={`canvas-sidebar cart-canvas ${props.showCart ? "show" : ""}`}>
+      <div
+        className={`canvas-sidebar cart-canvas ${props.showCart ? "show" : ""}`}
+      >
         <div className="canvas-overlay"></div>
         <div className="card border-0 pt-4 pb-7 h-100">
           <div className="px-6 text-right">
             <span className="canvas-close d-inline-block fs-24 mb-1 ml-auto lh-1 text-primary">
-            <RxCross2  onClick={()=>props.setShowCart(false)}/>
+              <RxCross2 onClick={() => props.setShowCart(false)} />
             </span>
           </div>
           <div className="card-header bg-transparent p-0 mx-6">
@@ -45,147 +123,20 @@ const CartSidebar = (props) => {
               <span className="d-inline-block mr-2 fs-15 text-secondary">
                 <i className="far fa-check-circle"></i>
               </span>
-              Your cart is saved for the next{" "}
+              Your cart is saved for the next
               <span className="text-secondary">4m34s</span>
             </p>
           </div>
-          <div className="card-body px-6 pt-7 overflow-y-auto">
-            <div className="mb-4 d-flex">
-              <a  className="d-flex align-items-center mr-2 text-muted">
-           {/* <RxCross2 /> */}
-              </a>
-              <div className="media w-100">
-                <div className="w-60px mr-3">
-                  {/* <img
-                    src="images/product/product-01.jpg"
-                    alt="Natural Coconut Cleansing Oil"
-                  /> */}
-                </div>
-                <div className="media-body d-flex">
-                  <div className="cart-price pr-6">
-                    <p className="fs-14 font-weight-bold text-secondary mb-1">
-                      <span className="font-weight-500 fs-13 text-line-t    hrough text-body mr-1">
-                        $39.00
-                      </span>
-                      ₹ 3,58,755
-                    </p>
-                    <a href="product-detail.html" className="text-secondary">
-                      Geometric Fleur CZ Diamond Ring
-                    </a>
-                  </div>
-                  <div className="position-relative ml-auto">
-                    <div className="input-group">
-                      <a
-                        
-                        className="down position-absolute pos-fixed-left-center pl-2"
-                      >
-                        <i className="far fa-minus"></i>
-                      </a>
-                      <input
-                        type="number"
-                        className="number-cart w-90px px-6 text-center h-40px bg-input border-0"
-                      />
-                      <a
-                        
-                        className="up position-absolute pos-fixed-right-center pr-2"
-                      >
-                        <i className="far fa-plus"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mb-4 d-flex">
-              <a  className="d-flex align-items-center mr-2 text-muted">
-                <i className="fal fa-times"></i>
-              </a>
-              <div className="media w-100">
-                <div className="w-60px mr-3">
-                  {/* <img src="images/product/product-02.jpg" alt="Super Pure" /> */}
-                </div>
-                <div className="media-body d-flex">
-                  <div className="cart-price pr-6">
-                    <p className="fs-14 font-weight-bold text-secondary mb-1">
-                      <span className="font-weight-500 fs-13 text-line-through text-body mr-1">
-                        $39.00
-                      </span>
-                      ₹ 3,58,755
-                    </p>
-                    <a  className="text-secondary">
-                      Super Pure
-                    </a>
-                  </div>
-                  <div className="position-relative ml-auto">
-                    <div className="input-group">
-                      <a
-                        
-                        className="down position-absolute pos-fixed-left-center pl-2"
-                      >
-                        <i className="far fa-minus"></i>
-                      </a>
-                      <input
-                        type="number"
-                        className="number-cart w-90px px-6 text-center h-40px bg-input border-0"
-                      />
-                      <a
-                        
-                        className="up position-absolute pos-fixed-right-center pr-2"
-                      >
-                        <i className="far fa-plus"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mb-4 d-flex">
-              <a  className="d-flex align-items-center mr-2 text-muted">
-                <i className="fal fa-times"></i>
-              </a>
-              <div className="media w-100">
-                <div className="w-60px mr-3">
-                  {/* <img
-                    src="images/product/product-03.jpg"
-                    alt="Cleansing Balm"
-                  /> */}
-                </div>
-                <div className="media-body d-flex">
-                  <div className="cart-price pr-6">
-                    <p className="fs-14 font-weight-bold text-secondary mb-1">
-                      <span className="font-weight-500 fs-13 text-line-through text-body mr-1">
-                        $39.00
-                      </span>
-                      ₹ 3,58,755
-                    </p>
-                    <a href="product-detail.html" className="text-secondary">
-                      Cleansing Balm
-                    </a>
-                  </div>
-                  <div className="position-relative ml-auto">
-                    <div className="input-group">
-                      <a
-                        
-                        className="down position-absolute pos-fixed-left-center pl-2"
-                      >
-                        <i className="far fa-minus"></i>
-                      </a>
-                      <input
-                        type="number"
-                        className="number-cart w-90px px-6 text-center h-40px bg-input border-0"
-                      />
-                      <a
-                        
-                        className="up position-absolute pos-fixed-right-center pr-2"
-                      >
-                        <i className="far fa-plus"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* <button className="d-none" onClick={fetchProductById()}></button> */}
+          <div
+            className="card-body px-6 pt-7 overflow-y-auto"
+            ref={htmlRef}
+          ></div>
+          {/* {props.cart?.map((value) => {
+            {
+              /* return <h1>{fetchProductById(value.id)}</h1>; 
+          })} */}
+
           <div className="card-footer mt-auto border-0 bg-transparent px-6 pb-0 pt-5">
             <div className="d-flex align-items-center mb-2">
               <span className="text-secondary fs-15">Total price:</span>

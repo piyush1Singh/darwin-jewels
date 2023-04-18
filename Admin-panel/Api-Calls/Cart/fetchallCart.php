@@ -20,8 +20,8 @@ session_start();
 // exit;
 
 
-$json = file_get_contents('php://input');
-$json = json_decode($json);
+// $json = file_get_contents('php://input');
+// $json = json_decode($json);
 
     print_r(json_encode($_SESSION['cart']));
 

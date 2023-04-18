@@ -7,6 +7,7 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 
 // Allow these HTTP methods for the preflight request
 if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    // print_r($_SERVER['REQUEST_METHOD'] == 'OPTIONS');die();
     if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
     }
@@ -22,15 +23,35 @@ session_start();
 
 $json = file_get_contents('php://input');
 $json = json_decode($json);
-if($json->method=="fetchall"){
-  return  print_r(json_encode($_SESSION['cart']));
-  exit;
-}
-if (!empty($_SESSION)) {
-    array_push($_SESSION['cart'], [
+function checkifempty($arr,$json){
+    for($i=0;$i<count($arr);$i++){
+        if($json->id==$arr[$i]['id']){
+            $_SESSION['cart'][$i]['quantity']+= $json->quantity;
+            return ["status"=> false,"index"=>$i];
+        }
+        // print_r($arr[$i]['id']);
+    }
+// foreach($arr as $newarr){
+//     if($json->id==$newarr['id']){
+//         echo "id present";
+//         return false;
+//     }
+    
+//     // print_r($newarr);
+// }
+ array_push($_SESSION['cart'], [
         'id' => $json->id,
         'quantity' => $json->quantity,
     ]);
+
+}
+if (!empty($_SESSION)) {
+    checkifempty($_SESSION['cart'],$json);
+
+    // array_push($_SESSION['cart'], [
+    //     'id' => $json->id,
+    //     'quantity' => $json->quantity,
+    // ]);
     print_r(json_encode($_SESSION['cart']));
 
 } else {
@@ -43,3 +64,4 @@ if (!empty($_SESSION)) {
     print_r(json_encode($_SESSION['cart']));die();
     
 }
+?>
