@@ -21167,9 +21167,7 @@ input.checkbox-primary[type="checkbox"] {
   opacity: 0;
   transition-delay: 0.5s;
 }
-[data-animate] {
-  opacity: 0;
-}
+
 [data-animate].animated {
   opacity: 1;
 }

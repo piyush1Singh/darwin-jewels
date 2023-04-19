@@ -1,40 +1,19 @@
 import React, { useEffect, useState, useRef } from "react";
 import { RxCross2 } from "react-icons/rx";
 import "../index.css";
-
-
-const fetchCartApi = (id) => {
-  axios
-    .post(
-      "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/incrementQuantitybyId.php",
-      {
-        id: id,
-      },
-      {
-        withCredentials: true, // enable cookies/session support
-      }
-    )
-    .then((response) => {
-      // handle the response here
-      console.log(response.data);
-    })
-    .catch((error) => {
-      // handle the error here
-      console.error(error);
-    });
-  };
-
+import axios from 'axios';
+import incrementCart from "./IncrementFunction";
 
 const CartSidebar = (props) => {
-  // console.log(props);
-  const [html, setHtml] = useState("");
+  const [id, setId] = useState(null);
+
+
   const htmlRef = useRef("");
 
-  const incrementCart = (id) => {
-    fetchCartApi(id);
-  };
-
-
+  // useEffect(() => {
+  //   if (id) {
+  //   }
+  // }, [id]);
 
   const fetchProductById = async (incrementCart) => {
     var newData = "";
@@ -57,28 +36,28 @@ const CartSidebar = (props) => {
         // console.log(data, "data");
         for (let index = 0; index < data.length; index++) {
           newData +=
-            "<div class='mb-4 d-flex'>" +
-            "<a href='' class='d-flex align-items-center mr-2 text-muted'><i class='fal fa-times'></i></a>" +
-            "<div class='media w-100'>" +
-            "<div class='w-60px mr-3'>" +
+            "<div className='mb-4 d-flex'>" +
+            "<a href='' className='d-flex align-items-center mr-2 text-muted'><i className='fal fa-times'></i></a>" +
+            "<div className='media w-100'>" +
+            "<div className='w-60px mr-3'>" +
             "<img src=" +
             data[index][3] +
             " alt='atural Coconut Cleansing Oil'>" +
             "</div>" +
-            "<div class='media-body d-flex'>" +
-            "<div class='cart-price pr-6'>" +
-            " <p class='fs-14 font-weight-bold text-secondary mb-1'><span class='font-weight-500 fs-13 text-line-through text-body mr-1'>$39.00</span>₹" +
+            "<div className='media-body d-flex'>" +
+            "<div className='cart-price pr-6'>" +
+            " <p className='fs-14 font-weight-bold text-secondary mb-1'><span className='font-weight-500 fs-13 text-line-through text-body mr-1'>$39.00</span>₹" +
             "      3,58,755" +
             "     </p>" +
-            "      <a href='product-detail.html' class='text-secondary'>Geometric Fleur CZ Diamond Ring</a>" +
+            "      <a href='product-detail.html' className='text-secondary'>Geometric Fleur CZ Diamond Ring</a>" +
             "   </div>" +
-            "   <div class='position-relative ml-auto'>" +
-            "       <div class='input-group'>" +
-            "            <a class='down position-absolute pos-fixed-left-center pl-2' > - </a>" +
-            "           <input type='number' class='number-cart w-90px px-6 text-center h-40px bg-input border-0' value=" +
+            "   <div className='position-relative ml-auto'>" +
+            "       <div className='input-group'>" +
+            "            <a className='down position-absolute pos-fixed-left-center pl-2' > - </a>" +
+            "           <input type='number' className='number-cart w-90px px-6 text-center h-40px bg-input border-0' value=" +
             value.quantity +
             " disabled>" +
-            "<a class='up position-absolute pos-fixed-right-center pr-2' onclick='(" +
+            "<a className='up position-absolute pos-fixed-right-center pr-2' onclick='(" +
             incrementCart +
             ")(" +
             data[index][0] +

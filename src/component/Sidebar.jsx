@@ -10,7 +10,7 @@ import { useCategory } from "../CategoryContext";
 import CartSidebar from "./CartSidebar";
 import axios from "axios";
 
-const Sidebar = () => {
+const Sidebar = ({children}) => {
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
 
@@ -139,13 +139,16 @@ const fetchData = async () => {
           <ul className="list-inline align-items-center mb-0">
             {category?.map((value, key) => (
               <li className="list-inline-item mr-5" key={key}>
-                <a className="nav-link">{value[1]}</a>
+                <a href={"/categories/"+value[0]} className="nav-link">{value[1]}</a>
               </li>
             ))}
           </ul>
         </div>
       </div>
       <CartSidebar cart={cart} showCart={showCart} setShowCart={setShowCart} />
+      <div>
+      {children}
+      </div>
     </div>
   );
 };
