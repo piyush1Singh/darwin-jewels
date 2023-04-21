@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Stickybar from "./Stickybar";
-// import Logo from "../assets/images/DP-Retail.png";
+import Logo from "../assets/images/DP-Retail.png";
 import {
   AiOutlineShoppingCart,
   AiOutlineHeart,
@@ -8,41 +8,39 @@ import {
 } from "react-icons/ai";
 import { useCategory } from "../CategoryContext";
 import CartSidebar from "./CartSidebar";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
-const Sidebar = ({children}) => {
+const Sidebar = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
 
-
-const fetchData = async () => {
-      setShowCart(true)
-      try {
-        const requestOptions = {
-          method: "POST",
-          credentials: "include",
-        };
-        const response = await fetch(
-          "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php",
-          requestOptions
-        );
-        const responseData = await response.json();
-        const newArray = responseData.map((value) => ({
-          id: value.id,
-          quantity: value.quantity,
-        }));
-        setCart(newArray);
-        console.log(cart,"setcart")
-      } catch (error) {
-        console.error(error);
-      }
-    };
- 
+  const fetchData = async () => {
+    setShowCart(true);
+    try {
+      const requestOptions = {
+        method: "POST",
+        credentials: "include",
+      };
+      const response = await fetch(
+        "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php",
+        requestOptions
+      );
+      const responseData = await response.json();
+      const newArray = responseData.map((value) => ({
+        id: value.id,
+        quantity: value.quantity,
+      }));
+      setCart(newArray);
+      console.log(cart, "setcart");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   // useEffect(() => {
   //  fetchData()
   // }, [cart])
-  
+
   // try {
   //   const response = await axios.post(
   //     "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php",
@@ -71,9 +69,9 @@ const fetchData = async () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <div>
-            <a className="navbar-brand">
-              {/* <img className="" src={Logo} /> */}
-            </a>
+            <Link to="/" className="navbar-brand">
+              <img src={Logo} />
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -88,17 +86,10 @@ const fetchData = async () => {
           </div>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {/* {category?.map((value) => (
-                <li className="nav-item">
-                  <a className="nav-link" >
-                    {value[1]}
-                  </a>
-                </li>
-              ))} */}
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">
+                <Link to="/" className="nav-link active" aria-current="page">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link">Product</a>
@@ -139,16 +130,16 @@ const fetchData = async () => {
           <ul className="list-inline align-items-center mb-0">
             {category?.map((value, key) => (
               <li className="list-inline-item mr-5" key={key}>
-                <a href={"/categories/"+value[0]} className="nav-link">{value[1]}</a>
+                <a href={"/categories/" + value[0]} className="nav-link">
+                  {value[1]}
+                </a>
               </li>
             ))}
           </ul>
         </div>
       </div>
       <CartSidebar cart={cart} showCart={showCart} setShowCart={setShowCart} />
-      <div>
-      {children}
-      </div>
+      <div>{children}</div>
     </div>
   );
 };

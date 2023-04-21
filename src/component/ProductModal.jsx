@@ -5,9 +5,7 @@ import { BsCheckLg } from "react-icons/bs";
 import axios from 'axios';
 
 const ProductModal = (props) => {
-  const [cart, setCart] = useState();
   const [quantity, setQuantity] = useState();
-  const [productCartId, setProductCartId] = useState();
 
   const saveToCart = async(e,value) => {
     e.preventDefault();
@@ -29,7 +27,6 @@ const ProductModal = (props) => {
         // handle the error here
         console.error(error);
       });
-  
   };
 
 
@@ -220,7 +217,7 @@ const ProductModal = (props) => {
                   <div className="col-sm-4 form-group px-2 mb-6">
                     <label
                       className="text-secondary font-weight-600 mb-3"
-                      htmlFor="quickview-number"
+                      htmlhtmlFor="quickview-number"
                     >
                       Quantity:
                     </label>

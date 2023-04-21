@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../component/Sidebar";
-import { useParams } from "react-router-dom";
-import {AiFillStar} from "react-icons/ai"
+import { Link, useParams } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
 
 const CategoryProduct = () => {
   const param = useParams();
@@ -475,8 +475,7 @@ const CategoryProduct = () => {
                         <div className="position-relative">
                           <img
                             src={value[3]}
-                            alt="Geometric
-                                                        Fleur CZ Diamond Ring"
+                            alt="Geometric Fleur CZ Diamond Ring"
                           />
                           <div className="card-img-overlay d-flex p-3 flex-column">
                             <div className="mb-auto d-flex justify-content-center">
@@ -541,14 +540,14 @@ const CategoryProduct = () => {
                             <span>{value[4]}</span>
                           </p>
                           <h2 className="card-title fs-15 font-weight-500 mb-2">
-                            <a href="product-detail.html">{value[1]}</a>
+                            <Link to={"/product/" + value[0]}>{value[1]}</Link>
                           </h2>
                           <div className="d-flex align-items-center justify-content-center flex-wrap">
                             <ul className="list-inline mb-0 lh-1">
-                            {ratings(value[6])}
+                              {ratings(value[6])}
                             </ul>
                             <span className="card-text fs-14 font-weight-400 pl-2 lh-1">
-                              2947 reviews
+                              Reviews
                             </span>
                           </div>
                         </div>

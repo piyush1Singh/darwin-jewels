@@ -10,7 +10,7 @@ const Footer = () => {
         className="pt-10 pt-lg-13 pb-8 footer text-light bg-cover"
         style={{
           backgroundImage:
-            "url('./src/assets/images/banner/bg-footer-01.jpg  ')",
+            "url('/src/assets/images/banner/bg-footer-01.jpg')",
         }}
       >
         <div className="container container-xl">

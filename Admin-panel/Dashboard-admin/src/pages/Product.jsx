@@ -529,7 +529,7 @@ const Product = () => {
               />
               <label
                 className="form-check-label"
-                htmlFor="flexSwitchCheckDefault"
+                htmlhtmlFor="flexSwitchCheckDefault"
               >
                 Status
               </label>
