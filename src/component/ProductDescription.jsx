@@ -159,13 +159,26 @@ const ProductDescription = () => {
               <div className="col-md-6">
                 <p className="d-flex align-items-center mb-3">
                   <span className="text-line-through">
-                    ₹ {productDesc[0][4]}
+                    {(
+                      parseInt((productDesc[0][4] / 100) * 10) +
+                      parseInt(productDesc[0][4])
+                    ).toLocaleString("en-IN", {
+                      style: "currency",
+                      currency: "INR",
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    })}
                   </span>
                   <span className="fs-18 text-secondary font-weight-bold ml-3">
-                    ₹ 3,41,672
+                    {parseInt(productDesc[0][4]).toLocaleString("en-IN", {
+                      style: "currency",
+                      currency: "INR",
+                      minimumFractionDigits: 0,
+                      maximumFractionDigits: 0,
+                    })}
                   </span>
                   <span className="badge badge-primary fs-16 ml-4 font-weight-600 px-3">
-                    20%
+                    10%
                   </span>
                 </p>
                 <h2 className="fs-24 mb-2">{productDesc[0][1]}</h2>

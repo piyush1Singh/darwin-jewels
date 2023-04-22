@@ -535,9 +535,24 @@ const CategoryProduct = () => {
                         <div className="card-body pt-4 text-center px-0">
                           <p className="card-text font-weight-bold fs-16 mb-1 text-secondary">
                             <span className="fs-13 font-weight-500 text-decoration-through text-body pr-1">
-                              ₹ 3,58,755
+                              {(
+                                parseInt((value[4] / 100) * 10) +
+                                parseInt(value[4])
+                              ).toLocaleString("en-IN", {
+                                style: "currency",
+                                currency: "INR",
+                                minimumFractionDigits: 0,
+                                maximumFractionDigits: 0,
+                              })}
                             </span>
-                            <span>{value[4]}</span>
+                            <span>
+                              {parseInt(value[4]).toLocaleString("en-IN", {
+                                style: "currency",
+                                currency: "INR",
+                                minimumFractionDigits: 0,
+                                maximumFractionDigits: 0,
+                              })}
+                            </span>
                           </p>
                           <h2 className="card-title fs-15 font-weight-500 mb-2">
                             <Link to={"/product/" + value[0]}>{value[1]}</Link>

@@ -3,6 +3,7 @@ import { AiOutlineEye, AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { BsHandbag, BsTypeH1 } from "react-icons/bs";
 
 import ProductModal from "./ProductModal";
+import { Link } from "react-router-dom";
 
 const FeatureProduct = () => {
   let bgColor = {
@@ -160,7 +161,7 @@ const FeatureProduct = () => {
                             <div className="card-img-overlay d-flex p-3">
                               <div>
                                 <span className="badge badge-primary">
-                                  -20%
+                                  -10%
                                 </span>
                               </div>
                               <div className="my-auto w-100 content-change-vertical">
@@ -220,7 +221,7 @@ const FeatureProduct = () => {
                               </span>
                             </p>
                             <h2 className="card-title fs-15 font-weight-500 mb-2">
-                              <a >{value[1]}</a>
+                              <Link to={"/product/"+value[0] }>{value[1]}</Link>
                             </h2>
                             <div className="d-flex align-items-center justify-content-center flex-wrap">
                               <ul className="list-inline mb-0 lh-1">
