@@ -1,33 +1,18 @@
-import React, { useState,useEffect } from "react";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { BsCheckLg } from "react-icons/bs";
 import axios from 'axios';
+import { CartContext } from '../CartContext';
 
 const ProductModal = (props) => {
-  const [quantity, setQuantity] = useState();
+  const { quantity, saveToCart,setQuantity } = useContext(CartContext);
 
-  const saveToCart = async(e,value) => {
-    e.preventDefault();
-    axios.post(
-      'http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/addProducttoCart.php',
-      {
-        id: value,
-        quantity: quantity,
-      },
-      {
-        withCredentials: true, // enable cookies/session support
-      }
-    )
-      .then(response => {
-        // handle the response here
-        console.log(response.data);
-      })
-      .catch(error => {
-        // handle the error here
-        console.error(error);
-      });
+  const handleAddToCart = (e) => {
+    e.preventDefault()
+    saveToCart(e, props.productId);
   };
+
 
 
   
@@ -245,7 +230,7 @@ const ProductModal = (props) => {
                        
                           <button
                       className="btn btn-lg fs-18 btn-secondary btn-block h-60 bg-hover-primary border-0"
-                      onClick={(e)=>saveToCart(e,props.productId[0][0])}
+                      onClick={(e)=>handleAddToCart(e,props.productId[0][0])}
                     >
                       Add To Bag
                     </button>

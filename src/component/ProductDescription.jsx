@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import "../assets/App.css";
@@ -6,11 +6,12 @@ import "../index.css";
 import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import axios from "axios";
+import { CartContext } from "../CartContext";
 
 const ProductDescription = () => {
   const params = useParams();
   const [productDesc, setProductDesc] = useState();
-  const [quantity, setQuantity] = useState();
+
   const fetchProduct = async () => {
     let url = await fetch(
       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Product/fetchproductbyid.php",
@@ -25,31 +26,16 @@ const ProductDescription = () => {
     setProductDesc(data);
     console.log(data);
   };
+
   useEffect(() => {
     fetchProduct();
   }, []);
 
-  const saveToCart = async (e, productDesc) => {
+  const { quantity, saveToCart, setQuantity } = useContext(CartContext);
+
+  const handleAddToCart = (e) => {
     e.preventDefault();
-    axios
-      .post(
-        "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/addProducttoCart.php",
-        {
-          id: productDesc[0][0],
-          quantity: quantity,
-        },
-        {
-          withCredentials: true, // enable cookies/session support
-        }
-      )
-      .then((response) => {
-        // handle the response here
-        console.log(response.data);
-      })
-      .catch((error) => {
-        // handle the error here
-        console.error(error);
-      });
+    saveToCart(e, productDesc);
   };
 
   const ratings = (totalStar) => {
@@ -172,7 +158,9 @@ const ProductDescription = () => {
               </div>
               <div className="col-md-6">
                 <p className="d-flex align-items-center mb-3">
-                  <span className="text-line-through">{productDesc[0][4]}</span>
+                  <span className="text-line-through">
+                    ₹ {productDesc[0][4]}
+                  </span>
                   <span className="fs-18 text-secondary font-weight-bold ml-3">
                     ₹ 3,41,672
                   </span>
@@ -287,7 +275,6 @@ const ProductDescription = () => {
                           type="number"
                           id="number"
                           className="form-control w-100 px-6 text-center input-quality text-secondary h-60 fs-18 font-weight-bold border-0"
-                          value="1"
                         />
                         <a
                           href="#"
@@ -299,7 +286,7 @@ const ProductDescription = () => {
                     </div>
                     <div className="col-sm-8 mb-5 w-100 px-2">
                       <button
-                        onClick={(e) => saveToCart(e, productDesc[0][0])}
+                        onClick={(e) => handleAddToCart(e, productDesc[0][0])}
                         type="submit"
                         className="btn btn-lg fs-18 btn-secondary btn-block h-60 bg-hover-primary border-0"
                       >
@@ -340,7 +327,6 @@ const ProductDescription = () => {
                     </span>
                   </li>
                 </ul>
-              
               </div>
             </div>
           </div>

@@ -6,11 +6,13 @@ import CategoryProvider from "./CategoryContext";
 import CategoryProduct from "./pages/CategoryProduct";
 import { Routes, Route } from "react-router-dom";
 import ProductDescription from "./component/ProductDescription";
+import CartProvider from "./CartContext";
 
 const App = () => {
 
 
   return (
+    <CartProvider>
     <CategoryProvider>   
     <Routes>
     <Route path="/categories/:id" element={<CategoryProduct />} />
@@ -18,6 +20,7 @@ const App = () => {
     <Route path="/product/:id" element={<ProductDescription />} />
     </Routes>
     </CategoryProvider>
+    </CartProvider>
   );
 };
 
