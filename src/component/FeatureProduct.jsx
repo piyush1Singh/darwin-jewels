@@ -34,7 +34,6 @@ const FeatureProduct = () => {
     setProductId(data);
   };
 
-
   const fetchProduct = async () => {
     let url = await fetch(
       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Ecommerce-Api/fetchallProductRandom.php"
@@ -146,9 +145,9 @@ const FeatureProduct = () => {
                   aria-labelledby="pills-Skincare-tab"
                 >
                   <div className="row">
-                    {product?.map((value,key) => (
+                    {product?.map((value, key) => (
                       <div
-                      key={key}
+                        key={key}
                         className="col-lg-3 col-sm-6 mb-5 fadeInUp animated"
                         data-animate="fadeInUp"
                       >
@@ -166,7 +165,6 @@ const FeatureProduct = () => {
                               </div>
                               <div className="my-auto w-100 content-change-vertical">
                                 <a
-                                  
                                   data-toggle="tooltip"
                                   data-placement="left"
                                   title="View Product"
@@ -186,7 +184,6 @@ const FeatureProduct = () => {
                                   </span>
                                 </a>
                                 <a
-                                  
                                   data-toggle="tooltip"
                                   data-placement="left"
                                   title=""
@@ -221,7 +218,9 @@ const FeatureProduct = () => {
                               </span>
                             </p>
                             <h2 className="card-title fs-15 font-weight-500 mb-2">
-                              <Link to={"/product/"+value[0] }>{value[1]}</Link>
+                              <Link to={"/product/" + value[0]}>
+                                {value[1]}
+                              </Link>
                             </h2>
                             <div className="d-flex align-items-center justify-content-center flex-wrap">
                               <ul className="list-inline mb-0 lh-1">
@@ -237,7 +236,11 @@ const FeatureProduct = () => {
                     ))}
                   </div>
                 </div>
-                <ProductModal show={show} productId={productId} handleClose={handleClose} />
+                <ProductModal
+                  show={show}
+                  productId={productId}
+                  handleClose={handleClose}
+                />
               </div>
             </div>
           </div>

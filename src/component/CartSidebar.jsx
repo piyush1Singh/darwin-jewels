@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { RxCross2 } from "react-icons/rx";
 import "../index.css";
-import axios from 'axios';
+import axios from "axios";
 import incrementCart from "./IncrementFunction";
 
 const CartSidebar = (props) => {
   const [id, setId] = useState(null);
-
 
   const htmlRef = useRef("");
 
@@ -98,7 +97,7 @@ const CartSidebar = (props) => {
           </div>
           <div className="card-header bg-transparent p-0 mx-6">
             <h3 className="fs-24 mb-5">Shopping bag</h3>
-            <p className="fs-15 font-weight-500 text-body mb-5">
+            <p className="fs-15 font-weight-500 text-body mb-5">  
               <span className="d-inline-block mr-2 fs-15 text-secondary">
                 <i className="far fa-check-circle"></i>
               </span>

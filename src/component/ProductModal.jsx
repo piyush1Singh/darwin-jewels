@@ -2,20 +2,17 @@ import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { BsCheckLg } from "react-icons/bs";
-import axios from 'axios';
-import { CartContext } from '../CartContext';
+import axios from "axios";
+import { CartContext } from "../CartContext";
 
 const ProductModal = (props) => {
-  const { quantity, saveToCart,setQuantity } = useContext(CartContext);
+  const { quantity, saveToCart, setQuantity } = useContext(CartContext);
 
   const handleAddToCart = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     saveToCart(e, props.productId);
   };
 
-
-
-  
   return (
     <Modal
       className="modal-xxl"
@@ -47,7 +44,6 @@ const ProductModal = (props) => {
                       <a className="card-img">
                         {Array.isArray(props.productId) &&
                         props.productId.length ? (
-                       
                           <img
                             src={`../../Admin-panel/Dashboard-admin/src/assets/productImages/${props.productId[0][3]}`}
                             alt="product gallery"
@@ -225,19 +221,19 @@ const ProductModal = (props) => {
                     </div>
                   </div>
                   <div className="col-sm-8 mb-6 w-100 px-2">
-                  {Array.isArray(props.productId) &&
-                        props.productId.length ? (
-                       
-                          <button
-                      className="btn btn-lg fs-18 btn-secondary btn-block h-60 bg-hover-primary border-0"
-                      onClick={(e)=>handleAddToCart(e,props.productId[0][0])}
-                    >
-                      Add To Bag
-                    </button>
-                        ) : (
-                          <h1>No Id Found</h1>
-                        )}
-                   
+                    {Array.isArray(props.productId) &&
+                    props.productId.length ? (
+                      <button
+                        className="btn btn-lg fs-18 btn-secondary btn-block h-60 bg-hover-primary border-0"
+                        onClick={(e) =>
+                          handleAddToCart(e, props.productId[0][0])
+                        }
+                      >
+                        Add To Bag
+                      </button>
+                    ) : (
+                      <h1>No Id Found</h1>
+                    )}
                   </div>
                 </div>
               </form>

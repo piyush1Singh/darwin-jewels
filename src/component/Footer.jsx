@@ -1,6 +1,10 @@
 import React from "react";
 import { FaFacebookF } from "react-icons/fa";
-import { AiOutlineTwitter, AiOutlineInstagram,AiOutlineArrowRight } from "react-icons/ai";
+import {
+  AiOutlineTwitter,
+  AiOutlineInstagram,
+  AiOutlineArrowRight,
+} from "react-icons/ai";
 import { BsYoutube } from "react-icons/bs";
 
 const Footer = () => {
@@ -9,8 +13,7 @@ const Footer = () => {
       <footer
         className="pt-10 pt-lg-13 pb-8 footer text-light bg-cover"
         style={{
-          backgroundImage:
-            "url('/src/assets/images/banner/bg-footer-01.jpg')",
+          backgroundImage: "url('/src/assets/images/banner/bg-footer-01.jpg')",
         }}
       >
         <div className="container container-xl">
@@ -41,7 +44,7 @@ const Footer = () => {
               <h3 className="fs-20 mb-3 text-light">Company</h3>
               <p className="fs-14 lh-185 pr-xl-12">
                 Find a location nearest you. See{" "}
-                <a className="text-light font-weight-600" >
+                <a className="text-light font-weight-600">
                   <u>Our Stores</u>
                 </a>
               </p>
@@ -55,24 +58,16 @@ const Footer = () => {
               <h3 className="fs-20 mb-3 text-light">Useful links</h3>
               <ul className="list-unstyled mb-0">
                 <li className="pb-1">
-                  <a  className="text-light lh-175">
-                    New Products
-                  </a>
+                  <a className="text-light lh-175">New Products</a>
                 </li>
                 <li className="py-1">
-                  <a  className="text-light lh-175">
-                    Best Sellers
-                  </a>
+                  <a className="text-light lh-175">Best Sellers</a>
                 </li>
                 <li className="py-1">
-                  <a  className="text-light lh-175">
-                    Bundle &amp; Save
-                  </a>
+                  <a className="text-light lh-175">Bundle &amp; Save</a>
                 </li>
                 <li className="pt-1">
-                  <a  className="text-light lh-175">
-                    Online Gift Card
-                  </a>
+                  <a className="text-light lh-175">Online Gift Card</a>
                 </li>
               </ul>
             </div>
@@ -80,23 +75,23 @@ const Footer = () => {
               <h3 className="fs-20 mb-3 text-light">Social Media</h3>
               <ul className="list-inline fs-20 mb-0">
                 <li className="list-inline-item mr-5">
-                  <a className="text-light" >
-                  <AiOutlineTwitter />
+                  <a className="text-light">
+                    <AiOutlineTwitter />
                   </a>
                 </li>
                 <li className="list-inline-item mr-5">
-                  <a className="text-light" >
-                  <FaFacebookF />
+                  <a className="text-light">
+                    <FaFacebookF />
                   </a>
                 </li>
                 <li className="list-inline-item mr-5">
-                  <a className="text-light" >
-                  <AiOutlineInstagram />
+                  <a className="text-light">
+                    <AiOutlineInstagram />
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a className="text-light" >
-                  <BsYoutube />
+                  <a className="text-light">
+                    <BsYoutube />
                   </a>
                 </li>
               </ul>
