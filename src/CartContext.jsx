@@ -7,11 +7,11 @@ const CartProvider = ({children}) => {
   const [quantity, setQuantity] = useState();
 
   const saveToCart = async (e,productId) => {
-    
+    console.log(productId,"id")
     axios.post(
       'http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/addProducttoCart.php',
       {
-        id: productId,
+        id: productId[0][0],
         quantity: quantity,
       },
       {
