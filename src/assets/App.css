@@ -1,4 +1,3 @@
-
 .card {
   padding: 2em;
 }
@@ -68,7 +67,7 @@ div.container-xl {
 }
 .fs-md-68 {
   font-size: 68px !important;
-  color: #fff ;
+  color: #fff;
 }
 .flex {
   display: flex;
@@ -2258,4 +2257,21 @@ body {
   .algolia-docsearch-suggestion--content {
   background-color: rgba(208, 189, 236, 0.15) !important;
 }
-  
+.modal-header .close {
+  right: 30px;
+  padding: 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+.modal-body {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 35px !important;
+  background: transparent !important; 
+}
+.modal-body .modal-content{
+  padding: 20px;
+}
+.tab-pane{
+  padding-top: 25px !important; 
+}

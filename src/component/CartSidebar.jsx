@@ -97,7 +97,7 @@ const CartSidebar = (props) => {
           </div>
           <div className="card-header bg-transparent p-0 mx-6">
             <h3 className="fs-24 mb-5">Shopping bag</h3>
-            <p className="fs-15 font-weight-500 text-body mb-5">  
+            <p className="fs-15 font-weight-500 text-body mb-5">
               <span className="d-inline-block mr-2 fs-15 text-secondary">
                 <i className="far fa-check-circle"></i>
               </span>

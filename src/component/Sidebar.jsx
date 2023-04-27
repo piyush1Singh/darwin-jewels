@@ -6,9 +6,11 @@ import {
   AiOutlineHeart,
   AiOutlineUser,
 } from "react-icons/ai";
+import { NavDropdown } from "react-bootstrap";
 import { useCategory } from "../CategoryContext";
 import CartSidebar from "./CartSidebar";
 import { Link } from "react-router-dom";
+import LoginModal from "./LoginModal";
 
 const Sidebar = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
@@ -37,6 +39,23 @@ const Sidebar = ({ children }) => {
     }
   };
 
+  const [show, setShow] = useState(false);
+  //Bootstrap Modal Show
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const loginModal = () => {
+    handleShow();
+  };
+
+  //Login Dropdown State
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const logout=()=>{
+    localStorage.removeItem("login")
+    console.log("removed")
+    return
+  }
   // useEffect(() => {
   //  fetchData()
   // }, [cart])
@@ -104,11 +123,31 @@ const Sidebar = ({ children }) => {
           </div>
           <div className="icon">
             <ul className="d-flex list-style-none">
-              <li className="icon-button" title="Login">
-                <a>
-                  <AiOutlineUser />
-                </a>
-              </li>
+              {!localStorage.getItem("login") === true ? (
+                <li className="icon-button" title="Login">
+                  <a onClick={() => loginModal()}>
+                    <AiOutlineUser />
+                  </a>
+                </li>
+              ) : (
+                <NavDropdown
+                  className="nav-link"
+                  title="Home"
+                  id="basic-nav-dropdown"
+                  show={isDropdownOpen}
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                  <NavDropdown.Item href="">
+                    <svg className="icon icon-user-light mr-2"></svg>
+                    Profile
+                  </NavDropdown.Item>
+                  <NavDropdown.Item onClick={logout}>
+                    <i className="fa fa-sign-out mr-2"></i> Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              )}
+
               <li className="icon-button" title="Wishlist">
                 <a>
                   <AiOutlineHeart />
@@ -139,6 +178,11 @@ const Sidebar = ({ children }) => {
         </div>
       </div>
       <CartSidebar cart={cart} showCart={showCart} setShowCart={setShowCart} />
+      <LoginModal
+        handleClose={handleClose}
+        handleShow={handleShow}
+        show={show}
+      />
       <div>{children}</div>
     </div>
   );

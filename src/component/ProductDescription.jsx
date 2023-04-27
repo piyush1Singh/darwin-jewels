@@ -5,7 +5,6 @@ import "../assets/App.css";
 import "../index.css";
 import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
-import axios from "axios";
 import { CartContext } from "../CartContext";
 
 const ProductDescription = () => {
