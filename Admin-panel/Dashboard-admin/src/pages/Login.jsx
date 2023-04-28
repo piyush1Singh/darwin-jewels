@@ -86,7 +86,7 @@ const Login = () => {
         <TabPanel>
           <form>
             <div className="form-control mb-3">
-              <label htmlhtmlFor="">Email</label>
+              <label htmlFor="">Email</label>
               <input
                 type="email"
                 placeholder="Enter Email"
@@ -95,7 +95,7 @@ const Login = () => {
               />
             </div>
             <div className="form-control">
-              <label htmlhtmlFor="">Password</label>
+              <label htmlFor="">Password</label>
               <input
                 type="password"
                 placeholder="Enter Password"
@@ -114,7 +114,7 @@ const Login = () => {
         <TabPanel>
           <form>
             <div className="form-control mb-3">
-              <label htmlhtmlFor="">Email</label>
+              <label htmlFor="">Email</label>
               <input
                 type="email"
                 placeholder="Enter Email"
@@ -123,7 +123,7 @@ const Login = () => {
               />
             </div>
             <div className="form-control">
-              <label htmlhtmlFor="">Password</label>
+              <label htmlFor="">Password</label>
               <input
                 type="password"
                 placeholder="Enter Password"

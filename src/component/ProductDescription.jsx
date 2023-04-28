@@ -23,7 +23,6 @@ const ProductDescription = () => {
     );
     let data = await url.json();
     setProductDesc(data);
-    console.log(data);
   };
 
   useEffect(() => {
@@ -139,7 +138,6 @@ const ProductDescription = () => {
                           >
                             <div className="card p-0 rounded-0 border-0">
                               <a
-                                href="images/Necklaces/3/2.jpg"
                                 className="card-img"
                                 data-gtf-mfp="true"
                                 data-gallery-id="02"
@@ -269,7 +267,7 @@ const ProductDescription = () => {
                     <div className="col-sm-4 form-group px-2 mb-5">
                       <label
                         className="text-secondary font-weight-600 mb-3"
-                        htmlFor="number"
+                        htmlhtmlFor="number"
                       >
                         Quantity:
                       </label>

@@ -3,6 +3,7 @@ import { RxCross2 } from "react-icons/rx";
 import "../index.css";
 import axios from "axios";
 import incrementCart from "./IncrementFunction";
+import { Link } from "react-router-dom";
 
 const CartSidebar = (props) => {
   const [id, setId] = useState(null);
@@ -122,18 +123,18 @@ const CartSidebar = (props) => {
                 $106.00
               </span>
             </div>
-            <a
-              href="checkout.html"
+            <Link
+              to="/checkout"
               className="btn btn-secondary btn-block mb-3 bg-hover-primary border-hover-primary"
             >
               Check Out
-            </a>
-            <a
-              href="shopping-cart.html"
+            </Link> 
+            <Link
+              to="/checkout"
               className="btn btn-outline-secondary btn-block"
             >
               View Cart
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -350,7 +350,7 @@ const Banner = () => {
                 />
                 <label
                   className="form-check-label"
-                  htmlhtmlFor="flexSwitchCheckDefault"
+                  htmlhtmlhtmlFor="flexSwitchCheckDefault"
                 >
                   Status
                 </label>
