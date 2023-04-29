@@ -75,7 +75,7 @@ const LoginModal = (props) => {
         setRegisterClass("danger")
       return;
     }
-  };
+  };  
 
   return (
     <Modal

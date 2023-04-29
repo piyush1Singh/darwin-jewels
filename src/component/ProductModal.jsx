@@ -1,8 +1,5 @@
 import React, { useContext } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { BsCheckLg } from "react-icons/bs";
-import axios from "axios";
 import { CartContext } from "../CartContext";
 
 const ProductModal = (props) => {
@@ -54,60 +51,7 @@ const ProductModal = (props) => {
                       </a>
                     </div>
                   </div>
-                  {/* <div className="box px-0">
-                    <div className="card p-0 rounded-0 border-0">
-                      <a
-                        href="images/Necklaces/1/Necklaces_1_500x500.jpg"
-                        className="card-img"
-                      >
-                        <img
-                          src="images/Necklaces/1/Necklaces_1_500x500.jpg"
-                          alt="product gallery"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="box px-0">
-                    <div className="card p-0 rounded-0 border-0">
-                      <a href="images/bracelet/01/01.jpg" className="card-img">
-                        <img
-                          src="images/bracelet/01/01.jpg"
-                          alt="product gallery"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="box px-0">
-                    <div className="card p-0 rounded-0 border-0">
-                      <a href="images/pendent/1.jpg" className="card-img">
-                        <img src="images/pendent/1.jpg" alt="product gallery" />
-                      </a>
-                    </div>
-                  </div> */}
-                </div>
-                {/* <div className="view-slider-nav mx-n1">
-                  <div className="box py-4 px-1 cursor-pointer">
-                    <img
-                      src="images/rings/IMG_20230220_151206.jpg"
-                      alt="product gallery"
-                    />
-                  </div>
-                  <div className="box py-4 px-1 cursor-pointer">
-                    <img
-                      src="images/Necklaces/1/Necklaces_1_500x500.jpg"
-                      alt="product gallery"
-                    />
-                  </div>
-                  <div className="box py-4 px-1 cursor-pointer">
-                    <img
-                      src="images/bracelet/01/01.jpg"
-                      alt="product gallery"
-                    />
-                  </div>
-                  <div className="box py-4 px-1 cursor-pointer">
-                    <img src="images/pendent/1.jpg" alt="product gallery" />
-                  </div>
-                </div> */}
+               </div>
               </div>
             </div>
             <div className="col-md-6 pl-xl-6 pr-xl-8">

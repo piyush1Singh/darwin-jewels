@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { RxCross2 } from "react-icons/rx";
 import "../index.css";
-import axios from "axios";
 import incrementCart from "./IncrementFunction";
 import { Link } from "react-router-dom";
 
@@ -10,10 +9,6 @@ const CartSidebar = (props) => {
 
   const htmlRef = useRef("");
 
-  // useEffect(() => {
-  //   if (id) {
-  //   }
-  // }, [id]);
 
   const fetchProductById = async (incrementCart) => {
     var newData = "";
@@ -70,9 +65,6 @@ const CartSidebar = (props) => {
             " </div>";
         }
         htmlRef.current.innerHTML = newData;
-        // setHtml(newData)
-        // console.log(JSON.stringify(newData),'newData')
-        // console.log('sa')
       } catch (error) {
         console.error(error);
       }

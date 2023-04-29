@@ -56,32 +56,9 @@ const Sidebar = ({ children }) => {
     console.log("removed")
     return
   }
-  // useEffect(() => {
-  //  fetchData()
-  // }, [cart])
-
-  // try {
-  //   const response = await axios.post(
-  //     "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php",
-  //     {},
-  //     {
-  //       withCredentials: true, // enable cookies/session support
-  //     }
-  //   );
-  //   // handle the response here
-  //   let resonseData = JSON.stringify(response.data)
-  //   let parseData = JSON.parse(resonseData)
-  //   console.log(parseData, "clg cart");
-  //   console.log(typeof(parseData), "type cart");
-
-  //   setCart(parseData);
-  //   console.log(cart)
-  // } catch (error) {
-  //   // handle the error here
-  //   console.error(error);
-  // }
 
   const { category } = useCategory();
+  
   return (
     <div>
       <Stickybar />
