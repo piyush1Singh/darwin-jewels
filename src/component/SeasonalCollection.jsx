@@ -27,9 +27,7 @@ const SeasonalCollection = () => {
               <p className="mb-0 fs-18 pt-1 text-body">
                 A necklace is a piece of jewelry that is worn around the neck.
               </p>
-              <a  className="btn btn-md rounded btn-light mt-6">
-                Discover Now
-              </a>
+              <a className="btn btn-md rounded btn-light mt-6">Discover Now</a>
             </div>
           </div>
           <div className="col-lg-6  d-flex align-items-center justify-content-center py-lg-0 py-md-17 py-13 ">

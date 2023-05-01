@@ -7,7 +7,7 @@ import MainSlider from "../component/MainSlider";
 import SeasonalCollection from "../component/SeasonalCollection";
 import Service from "../component/Service";
 import Sidebar from "../component/Sidebar";
-import '../index.css'
+import "../index.css";
 
 const Index = () => {
   return (

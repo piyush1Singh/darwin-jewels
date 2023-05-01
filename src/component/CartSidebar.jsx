@@ -9,7 +9,6 @@ const CartSidebar = (props) => {
 
   const htmlRef = useRef("");
 
-
   const fetchProductById = async (incrementCart) => {
     var newData = "";
     let arr = [];
@@ -120,7 +119,7 @@ const CartSidebar = (props) => {
               className="btn btn-secondary btn-block mb-3 bg-hover-primary border-hover-primary"
             >
               Check Out
-            </Link> 
+            </Link>
             <Link
               to="/checkout"
               className="btn btn-outline-secondary btn-block"

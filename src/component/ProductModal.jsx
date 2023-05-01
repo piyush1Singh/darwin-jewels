@@ -51,7 +51,7 @@ const ProductModal = (props) => {
                       </a>
                     </div>
                   </div>
-               </div>
+                </div>
               </div>
             </div>
             <div className="col-md-6 pl-xl-6 pr-xl-8">

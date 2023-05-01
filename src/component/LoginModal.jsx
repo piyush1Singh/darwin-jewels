@@ -7,8 +7,8 @@ const LoginModal = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
-  const [registerMessage, setRegisterMessage] = useState("")
-  const [registerClass, setRegisterClass] = useState("")
+  const [registerMessage, setRegisterMessage] = useState("");
+  const [registerClass, setRegisterClass] = useState("");
   const emailHandle = (e) => {
     setEmail(e.target.value);
   };
@@ -17,7 +17,7 @@ const LoginModal = (props) => {
   };
 
   const login = async (e) => {
-    setLoginError("")
+    setLoginError("");
     e.preventDefault();
     if (email.length > 0 && password.length > 0) {
       let url = await fetch(
@@ -47,7 +47,7 @@ const LoginModal = (props) => {
   };
 
   const register = async (e) => {
-    setRegisterMessage("")
+    setRegisterMessage("");
     e.preventDefault();
     if (email.length > 0 && password.length > 0) {
       let url = await fetch(
@@ -62,20 +62,22 @@ const LoginModal = (props) => {
       );
       let data = await url.json();
       if (data.status == true) {
-        setRegisterMessage("User Successfully Registered , Please Login To Proceed")
-        setRegisterClass("success")
+        setRegisterMessage(
+          "User Successfully Registered , Please Login To Proceed"
+        );
+        setRegisterClass("success");
         return;
       } else {
         setRegisterMessage("Please Enter Valid Email And Password");
-        setRegisterClass("danger")
+        setRegisterClass("danger");
         return;
       }
     } else {
-        setRegisterMessage("Please Enter Valid Email And Password");
-        setRegisterClass("danger")
+      setRegisterMessage("Please Enter Valid Email And Password");
+      setRegisterClass("danger");
       return;
     }
-  };  
+  };
 
   return (
     <Modal
@@ -174,7 +176,6 @@ const LoginModal = (props) => {
               </p>
               <h5 className={`text-${registerClass}`}>{registerMessage}</h5>
               <form>
-
                 <input
                   name="email"
                   type="email"

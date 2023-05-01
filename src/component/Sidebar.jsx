@@ -51,14 +51,14 @@ const Sidebar = ({ children }) => {
   //Login Dropdown State
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const logout=()=>{
-    localStorage.removeItem("login")
-    console.log("removed")
-    return
-  }
+  const logout = () => {
+    localStorage.removeItem("login");
+    console.log("removed");
+    return;
+  };
 
   const { category } = useCategory();
-  
+
   return (
     <div>
       <Stickybar />

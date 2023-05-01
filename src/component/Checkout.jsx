@@ -25,7 +25,7 @@ const Checkout = () => {
 
   useEffect(() => {
     fetchUserDetails();
-    fetchData()
+    fetchData();
     if (login !== "true") {
       navigate("/");
     }
@@ -66,34 +66,32 @@ const Checkout = () => {
                 <div className="card border-0">
                   <div className="card-header px-0 mx-6 bg-transparent py-5">
                     <h4 className="fs-24 mb-5">Order Summary</h4>
-                    {cart?.map(()=>(
-
-                    <div className="media w-100 mb-4">
-                      <div className="w-60px mr-3">
-                        <img
-                          src="images/product-07.jpg"
-                          alt="Natural Coconut Cleansing Oil"
-                        />
-                      </div>
-                      <div className="media-body d-flex">
-                        <div className="cart-price pr-6">
-                          <a href="#" className="text-secondary pr-6">
-                            Natural Coconut Cleansing Oil
-                            <span className="text-body">x1</span>
-                          </a>
-                          <p className="fs-14 text-secondary mb-0 mt-1">
-                            Size:<span className="text-body"> Fullsize</span>
-                          </p>
+                    {cart?.map(() => (
+                      <div className="media w-100 mb-4">
+                        <div className="w-60px mr-3">
+                          <img
+                            src="images/product-07.jpg"
+                            alt="Natural Coconut Cleansing Oil"
+                          />
                         </div>
-                        <div className="ml-auto">
-                          <p className="fs-14 text-secondary mb-0 font-weight-bold">
-                            $29.00
-                          </p>
+                        <div className="media-body d-flex">
+                          <div className="cart-price pr-6">
+                            <a href="#" className="text-secondary pr-6">
+                              Natural Coconut Cleansing Oil
+                              <span className="text-body">x1</span>
+                            </a>
+                            <p className="fs-14 text-secondary mb-0 mt-1">
+                              Size:<span className="text-body"> Fullsize</span>
+                            </p>
+                          </div>
+                          <div className="ml-auto">
+                            <p className="fs-14 text-secondary mb-0 font-weight-bold">
+                              $29.00
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
                     ))}
-                  
                   </div>
                   <div className="card-body px-6 pt-5">
                     <div className="d-flex align-items-center mb-2">

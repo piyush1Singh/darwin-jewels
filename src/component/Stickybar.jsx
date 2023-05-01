@@ -10,22 +10,22 @@ const Stickybar = () => {
         <div className="container container-xl d-flex justify-content-between">
           <ul className="list-inline d-flex align-items-center mb-0">
             <li className="list-inline-item mr-5">
-              <a  className="fs-14 lh-1">
+              <a className="fs-14 lh-1">
                 <AiOutlineTwitter />
               </a>
             </li>
             <li className="list-inline-item mr-5">
-              <a  className="fs-14 lh-1">
+              <a className="fs-14 lh-1">
                 <FaFacebookF />
               </a>
             </li>
             <li className="list-inline-item cl-white mr-5">
-              <a  className="fs-14 lh-1">
+              <a className="fs-14 lh-1">
                 <AiOutlineInstagram />
               </a>
             </li>
             <li className="list-inline-item mr-5">
-              <a  className="fs-14 lh-1">
+              <a className="fs-14 lh-1">
                 <BsYoutube />
               </a>
             </li>
