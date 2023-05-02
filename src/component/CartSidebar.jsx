@@ -27,6 +27,7 @@ const CartSidebar = (props) => {
           }
         );
         let data = await url.json();
+        console.log(data);
         // console.log(data, "data");
         for (let index = 0; index < data.length; index++) {
           newData +=
@@ -36,14 +37,28 @@ const CartSidebar = (props) => {
             "<div className='w-60px mr-3'>" +
             "<img src=" +
             data[index][3] +
-            " alt='atural Coconut Cleansing Oil'>" +
+            "alt='Natural Coconut Cleansing Oil'>" +
             "</div>" +
             "<div className='media-body d-flex'>" +
             "<div className='cart-price pr-6'>" +
-            " <p className='fs-14 font-weight-bold text-secondary mb-1'><span className='font-weight-500 fs-13 text-line-through text-body mr-1'>$39.00</span>₹" +
-            "      3,58,755" +
+            " <p className='fs-14 font-weight-bold text-secondary mb-1'><span className='font-weight-500 fs-13 text-line-through text-body mr-1'> " +
+            (parseInt((data[index][4] / 100) * 10) + parseInt(data[index][4])).toLocaleString("en-IN", {
+              style: "currency",
+              currency: "INR",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            }) +
+            "</span>" +
+            parseInt(data[index][4]).toLocaleString("en-IN", {
+              style: "currency",
+              currency: "INR",
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            }) +
             "     </p>" +
-            "      <a href='product-detail.html' className='text-secondary'>Geometric Fleur CZ Diamond Ring</a>" +
+            "      <a href='product-detail.html' className='text-secondary'>" +
+            data[index][1] +
+            "</a>" +
             "   </div>" +
             "   <div className='position-relative ml-auto'>" +
             "       <div className='input-group'>" +
