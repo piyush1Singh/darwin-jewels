@@ -118,7 +118,7 @@ const CartSidebar = (props) => {
             ref={htmlRef}
           ></div>
           {/* {props.cart?.map((value) => {
-            {
+            {   
               /* return <h1>{fetchProductById(value.id)}</h1>; 
           })} */}
 

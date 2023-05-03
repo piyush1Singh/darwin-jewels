@@ -142,7 +142,7 @@ const ProductModal = (props) => {
                   <div className="col-sm-4 form-group px-2 mb-6">
                     <label
                       className="text-secondary font-weight-600 mb-3"
-                      htmlhtmlhtmlFor="quickview-number"
+                      htmlFor="quickview-number"
                     >
                       Quantity:
                     </label>
