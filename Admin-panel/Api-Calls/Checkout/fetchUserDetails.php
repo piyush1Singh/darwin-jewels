@@ -29,4 +29,3 @@ if (isset($json->user_id)) {
     print_r($row);
     // echo "No Id Found";
 }
-?>

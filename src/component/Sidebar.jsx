@@ -143,7 +143,7 @@ const Sidebar = ({ children }) => {
       </nav>
       <div className="topbar d-none d-xl-block border-top">
         <div className="container text-center">
-          <ul className="list-inline align-items-center mb-0">
+          <ul className="list-inline align-items-center mb-0">  
             {category?.map((value, key) => (
               <li className="list-inline-item mr-5" key={key}>
                 <a href={"/categories/" + value[0]} className="nav-link">

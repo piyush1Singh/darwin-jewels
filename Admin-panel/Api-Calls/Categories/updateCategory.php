@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json');
 $json = file_get_contents('php://input');
 $json = json_decode($json);
-if (isset($json->id)&& isset($json->categoryName)&& isset($json->categoryDesc)&& isset($json->categoryImg)&& isset($json->status)) {
+if (isset($json->id) && isset($json->categoryName) && isset($json->categoryDesc) && isset($json->categoryImg) && isset($json->status)) {
     $id = $json->id;
     $categoryName = $json->categoryName;
     $categoryDesc = $json->categoryDesc;
@@ -13,7 +13,7 @@ if (isset($json->id)&& isset($json->categoryName)&& isset($json->categoryDesc)&&
     $status = $json->status;
 
 
-    $query =  "UPDATE `categories` SET `category_name`='$categoryName',`category_desc`='$categoryDesc',`category_img`='$categoryImg',`status`='$status' WHERE id = $id" ;
+    $query =  "UPDATE `categories` SET `category_name`='$categoryName',`category_desc`='$categoryDesc',`category_img`='$categoryImg',`status`='$status' WHERE id = $id";
     if (mysqli_query($conn, $query)) {
         $result = ["status" => "success"];
         $row = json_encode($result);

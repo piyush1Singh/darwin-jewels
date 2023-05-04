@@ -15,9 +15,9 @@ $query = "Select * from admin_login Where email = '$email_id' And password = '$p
 $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) > 0) {
     $_SESSION["email"] = $email_id;
-  $res =  mysqli_fetch_row($result);
-//   print_r($res);exit;
-    $result = ["status" => true,"user_id"=>$res[0]];
+    $res =  mysqli_fetch_row($result);
+    //   print_r($res);exit;
+    $result = ["status" => true, "user_id" => $res[0]];
 
     $result = json_encode($result);
     print_r($result);

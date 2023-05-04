@@ -5,12 +5,12 @@ header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json');
 $json = file_get_contents('php://input');
 $json = json_decode($json);
-if (isset($json->id)&& isset($json->status)) {
+if (isset($json->id) && isset($json->status)) {
     $id = $json->id;
     $status = $json->status;
 
 
-    $query =  "UPDATE `featured_collection` SET `f_status`='$status' WHERE id = $id" ;
+    $query =  "UPDATE `featured_collection` SET `f_status`='$status' WHERE id = $id";
     // echo $query;exit;
     if (mysqli_query($conn, $query)) {
         $result = ["status" => "success"];

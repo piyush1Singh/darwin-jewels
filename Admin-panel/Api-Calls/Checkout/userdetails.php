@@ -40,4 +40,3 @@ if(mysqli_num_rows($result)==0){
     $result = json_encode($result);
     print_r($result);
 }
-?>

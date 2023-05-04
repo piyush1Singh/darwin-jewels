@@ -15,22 +15,22 @@ if (isset($json->id)) {
     $id = $json->id;
 
     $query  = "DELETE FROM `product` Where id = $id ";
-// echo $query;die();
+    // echo $query;die();
     $result = mysqli_query($conn, $query);
 
     if (mysqli_query($conn, $query)) {
-        $result= ["status"=>"success"];
+        $result = ["status" => "success"];
         $row = json_encode($result);
         // echo "<pre>";
         print_r($row);
     } else {
-    $result= ["status"=>"No Data Found"];
-    $row = json_encode($result);
-    print_r($row);
+        $result = ["status" => "No Data Found"];
+        $row = json_encode($result);
+        print_r($row);
         // echo "<h1>No Data Found</h1>";
     }
 } else {
-    $result= ["status"=>"No Id Found"];
+    $result = ["status" => "No Id Found"];
     $row = json_encode($result);
     print_r($row);
     // echo "No Id Found";

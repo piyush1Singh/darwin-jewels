@@ -260,50 +260,54 @@ const FeaturedCollection = () => {
             </tr>
           </thead>
           <tbody>
-          {collection.length > 0 ? (
-            collection?.map((value, key) => (
+            {collection.length > 0 ? (
+              collection?.map((value, key) => (
+                <tr>
+                  <td>{value[0]}</td>
+                  <td>{value[1]}</td>
+                  <td>
+                    <img
+                      className="collection-img"
+                      src={"/src/assets/collectionImages/" + value[2]}
+                      alt=""
+                    />
+                  </td>
+                  <td key={value[3]}>
+                    {value[3] == 1 ? (
+                      <button
+                        className="btn btn-success"
+                        onClick={() => updateCollectionStatus(0, value[0])}
+                      >
+                        Active
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => updateCollectionStatus(1, value[0])}
+                      >
+                        InActive
+                      </button>
+                    )}
+                  </td>
+                  <td className="">
+                    <button className="m-2">
+                      <AiFillEdit
+                        onClick={(e) => editCollection(e, value[0])}
+                      />
+                    </button>
+                    <button className="m-2">
+                      <BsTrash onClick={(e) => deleteCollection(e, value[0])} />
+                    </button>
+                  </td>
+                </tr>
+              ))
+            ) : (
               <tr>
-                <td>{value[0]}</td>
-                <td>{value[1]}</td>
-                <td>
-                  <img
-                    className="collection-img"
-                    src={"/src/assets/collectionImages/" + value[2]}
-                    alt=""
-                  />
-                </td>
-                <td key={value[3]}>
-                  {value[3] == 1 ? (
-                    <button
-                      className="btn btn-success"
-                      onClick={() => updateCollectionStatus(0, value[0])}
-                    >
-                      Active
-                    </button>
-                  ) : (
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => updateCollectionStatus(1, value[0])}
-                    >
-                      InActive
-                    </button>
-                  )}
-                </td>
-                <td className="">
-                  <button className="m-2">
-                    <AiFillEdit onClick={(e) => editCollection(e, value[0])} />
-                  </button>
-                  <button className="m-2">
-                    <BsTrash onClick={(e) => deleteCollection(e, value[0])} />
-                  </button>
-                </td>
-              </tr>
-            )))
-            : <tr>
                 <td className="text-center" colSpan={6}>
                   <h3 className="bold text-danger">No data Found</h3>
                 </td>
-              </tr>}
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
