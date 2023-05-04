@@ -23,13 +23,13 @@ session_start();
 
 $json = file_get_contents('php://input');
 $json = json_decode($json);
-function checkCartId($id){
-    foreach($_SESSION['cart'] as $product){
-     print_r($product);
-
- }
+function checkCartId($id)
+{
+    foreach ($_SESSION['cart'] as $product) {
+        print_r($product);
+    }
 }
-if(isset($json->id)){
+if (isset($json->id)) {
 
     checkCartId($json->id);
 }

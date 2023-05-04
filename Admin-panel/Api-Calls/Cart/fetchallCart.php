@@ -24,5 +24,3 @@ session_start();
 // $json = json_decode($json);
 
     print_r(json_encode($_SESSION['cart']));
-
-?>

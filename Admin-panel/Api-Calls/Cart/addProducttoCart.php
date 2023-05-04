@@ -64,4 +64,3 @@ if (!empty($_SESSION)) {
     print_r(json_encode($_SESSION['cart']));die();
     
 }
-?>
