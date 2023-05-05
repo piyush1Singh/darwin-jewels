@@ -1,5 +1,5 @@
 <?php
-include "database.php";
+include "../Database/database.php";
 header('Access-Control-Allow-Origin: *'); // replace with your React app's domain
 header('Access-Control-Allow-Headers: Content-Type');
 // $json = file_get_contents('php://input');
