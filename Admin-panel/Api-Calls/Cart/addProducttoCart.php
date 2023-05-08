@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS'])) {
         header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
     }
-    exit(0);
+    exit();
 }
 session_start();
 // session_destroy();
@@ -23,37 +23,36 @@ session_start();
 
 $json = file_get_contents('php://input');
 $json = json_decode($json);
-function checkifempty($arr,$json){
-    for($i=0;$i<count($arr);$i++){
-        if($json->id==$arr[$i]['id']){
-            $_SESSION['cart'][$i]['quantity']+= $json->quantity;
-            return ["status"=> false,"index"=>$i];
+function checkifempty($arr, $json)
+{
+    for ($i = 0; $i < count($arr); $i++) {
+        if ($json->id == $arr[$i]['id']) {
+            $_SESSION['cart'][$i]['quantity'] += $json->quantity;
+            return ["status" => false, "index" => $i];
         }
         // print_r($arr[$i]['id']);
     }
-// foreach($arr as $newarr){
-//     if($json->id==$newarr['id']){
-//         echo "id present";
-//         return false;
-//     }
-    
-//     // print_r($newarr);
-// }
- array_push($_SESSION['cart'], [
+    // foreach($arr as $newarr){
+    //     if($json->id==$newarr['id']){
+    //         echo "id present";
+    //         return false;
+    //     }
+
+    //     // print_r($newarr);
+    // }
+    array_push($_SESSION['cart'], [
         'id' => $json->id,
         'quantity' => $json->quantity,
     ]);
-
 }
 if (!empty($_SESSION)) {
-    checkifempty($_SESSION['cart'],$json);
+    checkifempty($_SESSION['cart'], $json);
 
     // array_push($_SESSION['cart'], [
     //     'id' => $json->id,
     //     'quantity' => $json->quantity,
     // ]);
     print_r(json_encode($_SESSION['cart']));
-
 } else {
 
     $_SESSION['cart'] = array();
@@ -61,6 +60,6 @@ if (!empty($_SESSION)) {
         'id' => $json->id,
         'quantity' => $json->quantity,
     ]);
-    print_r(json_encode($_SESSION['cart']));die();
-    
+    print_r(json_encode($_SESSION['cart']));
+    die();
 }

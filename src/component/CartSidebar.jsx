@@ -9,7 +9,7 @@ const CartSidebar = (props) => {
 
   const htmlRef = useRef("");
 
-  const fetchProductById = async (incrementCart) => {
+  const fetchProductById = async (incrementCart) => { 
     var newData = "";
     let arr = [];
     for (const value of props.cart || []) {
@@ -22,7 +22,7 @@ const CartSidebar = (props) => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              id: value.id, // fixed: use value.id instead of value
+              id: value.id, // Fixed: use value.id instead of value
             }),
           }
         );
@@ -42,7 +42,9 @@ const CartSidebar = (props) => {
             "<div className='media-body d-flex'>" +
             "<div className='cart-price pr-6'>" +
             " <p className='fs-14 font-weight-bold text-secondary mb-1'><span className='font-weight-500 fs-13 text-line-through text-body mr-1'> " +
-            (parseInt((data[index][4] / 100) * 10) + parseInt(data[index][4])).toLocaleString("en-IN", {
+            (
+              parseInt((data[index][4] / 100) * 10) + parseInt(data[index][4])
+            ).toLocaleString("en-IN", {
               style: "currency",
               currency: "INR",
               minimumFractionDigits: 0,
@@ -67,10 +69,12 @@ const CartSidebar = (props) => {
             value.quantity +
             " disabled>" +
             "<a className='up position-absolute pos-fixed-right-center pr-2' onclick='(" +
+            //Increment Function Not Working
             incrementCart +
             ")(" +
             data[index][0] +
             ")'> + </a>" +
+            //Increment Function Not Working
             "         </a>" +
             "        </div>" +
             "    </div>" +
@@ -78,6 +82,8 @@ const CartSidebar = (props) => {
             " </div>" +
             " </div>";
         }
+
+        //Saving Cart Data In htmlref if New Product Added In Cart
         htmlRef.current.innerHTML = newData;
       } catch (error) {
         console.error(error);
@@ -115,6 +121,7 @@ const CartSidebar = (props) => {
           {/* <button className="d-none" onClick={fetchProductById()}></button> */}
           <div
             className="card-body px-6 pt-7 overflow-y-auto"
+            // Data Printed By Ref 
             ref={htmlRef}
           ></div>
           {/* {props.cart?.map((value) => {

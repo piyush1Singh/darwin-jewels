@@ -23,11 +23,11 @@ if (isset($json->id)) {
         $result = ["status" => "No Id Found 1"];
         $row = json_encode($result);
         print_r($row);
-        // echo "No Id Found";
+        
     }
 } else {
     $result = ["status" => "No Id Found 2"];
     $row = json_encode($result);
     print_r($row);
-    // echo "No Id Found";
+    
 }

@@ -17,13 +17,13 @@ if (isset($json->id)) {
         // echo "<pre>";
         print_r($row);
     } else {
-        $result= ["status"=>"No Id Found"];
+        $result = ["status" => "No Id Found"];
         $row = json_encode($result);
         print_r($row);
     }
-}else {
-    $result= ["status"=>"No Id Found"];
+} else {
+    $result = ["status" => "No Id Found"];
     $row = json_encode($result);
     print_r($row);
-    // echo "No Id Found";
+    
 }

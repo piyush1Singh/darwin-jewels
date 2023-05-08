@@ -123,9 +123,7 @@ const LoginModal = (props) => {
                 onChange={(e) => passwordHandle(e)}
               />
               <div className="d-flex align-items-center justify-content-between mt-5 mb-4">
-                <a href="" className="text-secondary">
-                  Forgot your password?
-                </a>
+                <a className="text-secondary">Forgot your password?</a>
               </div>
               <button
                 type="submit"

@@ -23,11 +23,11 @@ if (isset($json->id) && isset($json->categoryName) && isset($json->categoryDesc)
         $result = ["status" => "No Id Found"];
         $row = json_encode($result);
         print_r($row);
-        // echo "No Id Found";
+        
     }
 } else {
     $result = ["status" => "No Id Found"];
     $row = json_encode($result);
     print_r($row);
-    // echo "No Id Found";
+    
 }
