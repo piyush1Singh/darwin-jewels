@@ -26,8 +26,10 @@ const Category = () => {
           <div className="card border-0 hover-shine hover-zoom-in banner banner-03">
             <div
               className="card-img bg-img-cover-center"
+              // backgroundImage: `url(../../Admin-panel/Dashboard-admin/src/assets/categoriesImages/${item[3]})`,
+              // Above Code Reference For Category Image Link To Show Img From Folder Code
               style={{
-                backgroundImage: `url(../../Admin-panel/Dashboard-admin/src/assets/categoriesImages/${item[3]})`,
+                backgroundImage: `url(${item[3]})`,
               }}
             ></div>
             <div className="card-img-overlay d-inline-flex flex-column px-7 pt-7 pb-6 justify-content-end">

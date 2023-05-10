@@ -154,7 +154,9 @@ const FeatureProduct = () => {
                         <div className="card border-0 product">
                           <div className="position-relative">
                             <img
-                              src={`../../Admin-panel/Dashboard-admin/src/assets/productImages/${value[3]}`}
+                            // ../../Admin-panel/Dashboard-admin/src/assets/productImages/
+                            // Above Code Is Reference For To Show Image Link From Folder Path
+                              src={`${value[3]}`}
                               alt="Facial cleanser"
                             />
                             <div className="card-img-overlay d-flex p-3">

@@ -42,7 +42,9 @@ const ProductModal = (props) => {
                         {Array.isArray(props.productId) &&
                         props.productId.length ? (
                           <img
-                            src={`../../Admin-panel/Dashboard-admin/src/assets/productImages/${props.productId[0][3]}`}
+                            //(../../Admin-panel/Dashboard-admin/src/assets/productImages/)
+                            // Above Code Reference For Category Image Link To Show Img From Folder Code
+                            src={`${props.productId[0][3]}`}
                             alt="product gallery"
                           />
                         ) : (
