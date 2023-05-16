@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Sidebar from "../component/Sidebar";
 import { Link, useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import { CartContext } from "../CartContext";
 
-const CategoryProduct = () => {
+const CategoryProduct = (props) => {
+  console.log(props, "props");
   const param = useParams();
   const [categories, setCategories] = useState();
   const fetchProductCategory = async () => {
@@ -23,6 +25,13 @@ const CategoryProduct = () => {
   useEffect(() => {
     fetchProductCategory();
   }, []);
+
+  const handleAddToCart = (e, value) => {
+    e.preventDefault();
+    saveToCart(e, value);
+  };
+
+  const { quantity, saveToCart, setQuantity } = useContext(CartContext);
 
   const ratings = (totalStar) => {
     if (totalStar == 1) {
@@ -524,10 +533,10 @@ const CategoryProduct = () => {
                             </div>
                             <div className="text-center">
                               <a
-                                href="shopping-cart.html"
+                                onClick={(e) => handleAddToCart(e, value[0])}
                                 className="btn btn-secondary bg-hover-primary border-hover-primary lh-12"
                               >
-                                Add To Bag
+                                Add To Cart
                               </a>
                             </div>
                           </div>

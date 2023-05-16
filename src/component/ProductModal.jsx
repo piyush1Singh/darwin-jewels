@@ -7,7 +7,7 @@ const ProductModal = (props) => {
 
   const handleAddToCart = (e) => {
     e.preventDefault();
-    saveToCart(e, props.productId);
+    saveToCart(e, props.productId[0][0]);
   };
 
   return (

@@ -12,8 +12,8 @@ const CartProvider = ({ children }) => {
       .post(
         "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/addProducttoCart.php",
         {
-          id: productId[0][0],
-          quantity: quantity,
+          id: productId,
+          quantity: 1,
         },
         {
           withCredentials: true, // enable cookies/session support
