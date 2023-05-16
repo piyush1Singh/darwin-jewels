@@ -76,7 +76,7 @@ const Checkout = () => {
                         </div>
                         <div className="media-body d-flex">
                           <div className="cart-price pr-6">
-                            <a href="#" className="text-secondary pr-6">
+                            <a  className="text-secondary pr-6">
                               Natural Coconut Cleansing Oil
                               <span className="text-body">x1</span>
                             </a>
@@ -120,7 +120,7 @@ const Checkout = () => {
               <div className="col-lg-8 pr-xl-15 order-lg-first form-control-01">
                 <p className="mb-2">
                   Returning customer?{" "}
-                  <a href="#" data-toggle="modal" data-target="#sign-in">
+                  <a  data-toggle="modal" data-target="#sign-in">
                     Click here to login
                   </a>
                 </p>
@@ -266,7 +266,7 @@ const Checkout = () => {
                   </label>
                   <div className="dropdown show lh-1 rounded mb-4">
                     <a
-                      href="#"
+                      
                       className="dropdown-toggle custom-dropdown-toggle text-decoration-none text-secondary p-3 position-relative d-block"
                       id="dropdownMenuButton"
                       data-toggle="dropdown"
@@ -279,22 +279,22 @@ const Checkout = () => {
                       className="dropdown-menu custom-dropdown-item"
                       aria-labelledby="dropdownMenuButton"
                     >
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" >
                         Andorra
                       </a>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" >
                         San Marino
                       </a>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" >
                         Tunisia
                       </a>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" >
                         Micronesia
                       </a>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" >
                         Solomon Islands
                       </a>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" >
                         Macedonia
                       </a>
                     </div>

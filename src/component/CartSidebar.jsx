@@ -9,7 +9,7 @@ const CartSidebar = (props) => {
 
   const htmlRef = useRef("");
 
-  const fetchProductById = async (incrementCart) => { 
+  const fetchProductById = async (incrementCart) => {
     var newData = "";
     let arr = [];
     for (const value of props.cart || []) {
@@ -121,7 +121,7 @@ const CartSidebar = (props) => {
           {/* <button className="d-none" onClick={fetchProductById()}></button> */}
           <div
             className="card-body px-6 pt-7 overflow-y-auto"
-            // Data Printed By Ref 
+            // Data Printed By Ref
             ref={htmlRef}
           ></div>
           {/* {props.cart?.map((value) => {

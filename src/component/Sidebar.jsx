@@ -115,7 +115,7 @@ const Sidebar = ({ children }) => {
                   onMouseEnter={() => setIsDropdownOpen(true)}
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
-                  <NavDropdown.Item href="">
+                  <NavDropdown.Item >
                     <svg className="icon icon-user-light mr-2"></svg>
                     Profile
                   </NavDropdown.Item>

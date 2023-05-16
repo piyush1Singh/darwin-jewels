@@ -142,7 +142,6 @@ const CategoryProduct = (props) => {
               <div className="d-flex align-items-center">
                 <div className="dropdown show lh-1 rounded ml-lg-5 ml-0">
                   <a
-                    href="#"
                     className="dropdown-toggle custom-dropdown-toggle text-decoration-none text-secondary p-3 mw-210 position-relative d-block"
                     id="dropdownMenuButton"
                     data-toggle="dropdown"
@@ -155,15 +154,9 @@ const CategoryProduct = (props) => {
                     className="dropdown-menu custom-dropdown-item"
                     aria-labelledby="dropdownMenuButton"
                   >
-                    <a className="dropdown-item" href="#">
-                      Price high to low
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      Price low to high
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      Random
-                    </a>
+                    <a className="dropdown-item">Price high to low</a>
+                    <a className="dropdown-item">Price low to high</a>
+                    <a className="dropdown-item">Random</a>
                   </div>
                 </div>
               </div>
@@ -185,71 +178,55 @@ const CategoryProduct = (props) => {
                     <div className="card-body p-0">
                       <ul className="list-unstyled mb-0">
                         <li className="mb-2">
-                          <a
-                            href="#"
-                            className="text-uppercase fs-14 letter-spacing-005 font-weight-600 text-body hover-secondary text-decoration-none"
-                          >
+                          <a className="text-uppercase fs-14 letter-spacing-005 font-weight-600 text-body hover-secondary text-decoration-none">
                             BODY CARE
                           </a>
                         </li>
                         <li className="mb-2">
-                          <a
-                            href="#"
-                            className="text-uppercase fs-14 letter-spacing-005 font-weight-600 text-body hover-secondary text-decoration-none"
-                          >
+                          <a className="text-uppercase fs-14 letter-spacing-005 font-weight-600 text-body hover-secondary text-decoration-none">
                             Skin care
                           </a>
                           <ul className="list-unstyled ml-5 mt-2 mb-5">
                             <li className="mb-1">
-                              <a href="#" className="text-body hover-secondary">
+                              <a className="text-body hover-secondary">
                                 Cleanser
                               </a>
                             </li>
                             <li className="mb-1">
-                              <a href="#" className="text-body hover-secondary">
-                                Toner
-                              </a>
+                              <a className="text-body hover-secondary">Toner</a>
                             </li>
                             <li className="mb-1">
-                              <a href="#" className="text-body hover-secondary">
+                              <a className="text-body hover-secondary">
                                 Scrubs & Masks
                               </a>
                             </li>
                             <li className="mb-1">
-                              <a href="#" className="text-body hover-secondary">
-                                Serum
-                              </a>
+                              <a className="text-body hover-secondary">Serum</a>
                             </li>
                             <li className="mb-1">
-                              <a href="#" className="text-body hover-secondary">
+                              <a className="text-body hover-secondary">
                                 Face Oils
                               </a>
                             </li>
                             <li className="mb-1">
-                              <a href="#" className="text-body hover-secondary">
+                              <a className="text-body hover-secondary">
                                 Moisturizer
                               </a>
                             </li>
                             <li className="mb-1">
-                              <a href="#" className="text-body hover-secondary">
+                              <a className="text-body hover-secondary">
                                 Eye Cream
                               </a>
                             </li>
                           </ul>
                         </li>
                         <li className="mb-2">
-                          <a
-                            href="#"
-                            className="text-uppercase fs-14 letter-spacing-005 font-weight-600 text-body hover-secondary text-decoration-none"
-                          >
+                          <a className="text-uppercase fs-14 letter-spacing-005 font-weight-600 text-body hover-secondary text-decoration-none">
                             Hair CARE
                           </a>
                         </li>
                         <li className="mb-2">
-                          <a
-                            href="#"
-                            className="text-uppercase fs-14 letter-spacing-005 font-weight-600 text-body hover-secondary text-decoration-none"
-                          >
+                          <a className="text-uppercase fs-14 letter-spacing-005 font-weight-600 text-body hover-secondary text-decoration-none">
                             ACCESSORIES
                           </a>
                         </li>
@@ -263,24 +240,20 @@ const CategoryProduct = (props) => {
                     <div className="card-body p-0">
                       <ul className="list-unstyled mb-0">
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
+                          <a className="text-body hover-secondary">
                             Best Seller
                           </a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
+                          <a className="text-body hover-secondary">
                             New Arrivals
                           </a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
-                            Sale
-                          </a>
+                          <a className="text-body hover-secondary">Sale</a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
-                            Hot Items
-                          </a>
+                          <a className="text-body hover-secondary">Hot Items</a>
                         </li>
                       </ul>
                     </div>
@@ -292,26 +265,26 @@ const CategoryProduct = (props) => {
                     <div className="card-body p-0">
                       <ul className="list-unstyled mb-0">
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
+                          <a className="text-body hover-secondary">
                             <span>All</span>
                           </a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
+                          <a className="text-body hover-secondary">
                             <span>$50</span>
                             <span> - </span>
                             <span>$99</span>
                           </a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
+                          <a className="text-body hover-secondary">
                             <span>$100</span>
                             <span> - </span>
                             <span>$499</span>
                           </a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
+                          <a className="text-body hover-secondary">
                             <span>$500</span>
                             <span> - </span>
                             <span>$2000</span>
@@ -327,24 +300,16 @@ const CategoryProduct = (props) => {
                     <div className="card-body p-0">
                       <ul className="list-unstyled mb-0">
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
-                            Single
-                          </a>
+                          <a className="text-body hover-secondary">Single</a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
-                            5 Pack
-                          </a>
+                          <a className="text-body hover-secondary">5 Pack</a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
-                            Full size
-                          </a>
+                          <a className="text-body hover-secondary">Full size</a>
                         </li>
                         <li className="mb-2">
-                          <a href="#" className="text-body hover-secondary">
-                            Mini size
-                          </a>
+                          <a className="text-body hover-secondary">Mini size</a>
                         </li>
                       </ul>
                     </div>
@@ -356,55 +321,37 @@ const CategoryProduct = (props) => {
                     <div className="card-body p-0">
                       <ul className="list-unstyled mb-0 widget-color d-flex flex-column">
                         <li className="mb-1">
-                          <a
-                            href="#"
-                            className="d-inline-flex align-items-center text-body text-decoration-none"
-                          >
+                          <a className="d-inline-flex align-items-center text-body text-decoration-none">
                             <span className="d-block item"></span>
                             <span className="ml-2">Black</span>
                           </a>
                         </li>
                         <li className="mb-1">
-                          <a
-                            href="#"
-                            className="d-inline-flex align-items-center text-body text-decoration-none"
-                          >
+                          <a className="d-inline-flex align-items-center text-body text-decoration-none">
                             <span className="d-block item border"></span>
                             <span className="ml-2">White</span>
                           </a>
                         </li>
                         <li className="mb-1">
-                          <a
-                            href="#"
-                            className="d-inline-flex align-items-center text-body text-decoration-none"
-                          >
+                          <a className="d-inline-flex align-items-center text-body text-decoration-none">
                             <span className="d-block item"></span>
                             <span className="ml-2">Pink</span>
                           </a>
                         </li>
                         <li className="mb-1">
-                          <a
-                            href="#"
-                            className="d-inline-flex align-items-center text-body text-decoration-none"
-                          >
+                          <a className="d-inline-flex align-items-center text-body text-decoration-none">
                             <span className="d-block item"></span>
                             <span className="ml-2">Maroon</span>
                           </a>
                         </li>
                         <li className="mb-1">
-                          <a
-                            href="#"
-                            className="d-inline-flex align-items-center text-body text-decoration-none"
-                          >
+                          <a className="d-inline-flex align-items-center text-body text-decoration-none">
                             <span className="d-block item"></span>
                             <span className="ml-2">Red</span>
                           </a>
                         </li>
                         <li className="mb-1">
-                          <a
-                            href="#"
-                            className="d-inline-flex align-items-center text-body text-decoration-none"
-                          >
+                          <a className="d-inline-flex align-items-center text-body text-decoration-none">
                             <span className="d-block item"></span>
                             <span className="ml-2">Dark Heathe</span>
                           </a>
@@ -419,54 +366,36 @@ const CategoryProduct = (props) => {
                     <div className="card-body p-0">
                       <ul className="list-inline mb-0">
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            Cleansing
-                          </a>
+                          <a className="text-body hover-secondary">Cleansing</a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            Make up
-                          </a>
+                          <a className="text-body hover-secondary">Make up</a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            eye cream
-                          </a>
+                          <a className="text-body hover-secondary">eye cream</a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            nail
-                          </a>
+                          <a className="text-body hover-secondary">nail</a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            oil
-                          </a>
+                          <a className="text-body hover-secondary">oil</a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            shampoo
-                          </a>
+                          <a className="text-body hover-secondary">shampoo</a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
+                          <a className="text-body hover-secondary">
                             coffee bean
                           </a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            healthy
-                          </a>
+                          <a className="text-body hover-secondary">healthy</a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            skin care
-                          </a>
+                          <a className="text-body hover-secondary">skin care</a>
                         </li>
                         <li className="list-inline-item mr-2 pb-1">
-                          <a href="#" className="text-body hover-secondary">
-                            sale
-                          </a>
+                          <a className="text-body hover-secondary">sale</a>
                         </li>
                       </ul>
                     </div>
@@ -493,7 +422,6 @@ const CategoryProduct = (props) => {
                               </div>
                               <div className="w-100 content-change-vertical">
                                 <a
-                                  href="#"
                                   data-toggle="tooltip"
                                   data-placement="left"
                                   title="Add to wishlist"
@@ -502,7 +430,6 @@ const CategoryProduct = (props) => {
                                   <svg className="icon icon-star-light fs-20"></svg>
                                 </a>
                                 <a
-                                  href="#"
                                   data-toggle="tooltip"
                                   data-placement="left"
                                   title="Quick view"
@@ -516,7 +443,6 @@ const CategoryProduct = (props) => {
                                   </span>
                                 </a>
                                 <a
-                                  href="#"
                                   data-toggle="tooltip"
                                   data-placement="left"
                                   title="View Product"
@@ -584,73 +510,48 @@ const CategoryProduct = (props) => {
                     <li className="page-item fs-18 d-none d-sm-block">
                       <a
                         className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
                         tabIndex="-1"
                       >
                         <i className="far fa-angle-double-left"></i>
                       </a>
                     </li>
                     <li className="page-item">
-                      <a
-                        className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
-                      >
+                      <a className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex">
                         1
                       </a>
                     </li>
                     <li className="page-item active" aria-current="page">
-                      <a
-                        className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
-                      >
+                      <a className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex">
                         2
                       </a>
                     </li>
                     <li className="page-item">
-                      <a
-                        className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
-                      >
+                      <a className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex">
                         3
                       </a>
                     </li>
                     <li className="page-item">
-                      <a
-                        className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
-                      >
+                      <a className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex">
                         4
                       </a>
                     </li>
                     <li className="page-item">
-                      <a
-                        className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
-                      >
+                      <a className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex">
                         5
                       </a>
                     </li>
                     <li className="page-item">
-                      <a
-                        className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
-                      >
+                      <a className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex">
                         ...
                       </a>
                     </li>
                     <li className="page-item">
-                      <a
-                        className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
-                      >
+                      <a className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex">
                         16
                       </a>
                     </li>
                     <li className="page-item fs-18 d-none d-sm-block">
-                      <a
-                        className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex"
-                        href="#"
-                      >
+                      <a className="page-link rounded-circle w-40px h-40 p-0 justify-content-center align-items-center d-flex">
                         <i className="far fa-angle-double-right"></i>
                       </a>
                     </li>

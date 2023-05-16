@@ -200,7 +200,7 @@ const ProductDescription = () => {
                     <ul className="list-inline d-flex justify-content-start mb-0">
                       <li className="list-inline-item mr-2 selected font-weight-600">
                         <a
-                          href="#"
+                          
                           className="fs-14 p-2 lh-13 d-block swatches-item rounded text-decoration-none border"
                           data-var="full size"
                         >
@@ -209,7 +209,7 @@ const ProductDescription = () => {
                       </li>
                       <li className="list-inline-item font-weight-600">
                         <a
-                          href="#"
+                          
                           className="fs-14 p-2 lh-13 d-block swatches-item rounded text-decoration-none border"
                           data-var="mini size"
                         >
@@ -273,7 +273,7 @@ const ProductDescription = () => {
                       </label>
                       <div className="input-group position-relative w-100">
                         <a
-                          href="#"
+                          
                           className="down position-absolute pos-fixed-left-center pl-4 z-index-2"
                         >
                           <i className="far fa-minus"></i>
@@ -287,7 +287,7 @@ const ProductDescription = () => {
                           className="form-control w-100 px-6 text-center input-quality text-secondary h-60 fs-18 font-weight-bold border-0"
                         />
                         <a
-                          href="#"
+                          
                           className="up position-absolute pos-fixed-right-center pr-4 z-index-2"
                         >
                           <i className="far fa-plus"></i>
@@ -307,14 +307,14 @@ const ProductDescription = () => {
                 </form>
                 <div className="d-flex align-items-center flex-wrap">
                   <a
-                    href="#"
+                    
                     className="text-decoration-none font-weight-bold fs-16 mr-6 d-flex align-items-center"
                   >
                     <svg className="icon icon-star-light fs-20"></svg>
                     <span className="ml-2">Add to wishlist</span>
                   </a>
                   <a
-                    href="#"
+                    
                     className="text-decoration-none font-weight-bold fs-16 d-flex align-items-center"
                   >
                     <svg className="icon icon-ShareNetwork fs-20"></svg>

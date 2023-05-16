@@ -96,10 +96,7 @@ const LoginModal = (props) => {
             <h4 className="fs-34 text-center mb-6">Sign In</h4>
             <p className="text-center fs-16 mb-7">
               Don’t have an account yet?
-              <a
-                href=""
-                className="text-secondary border-bottom text-decoration-none"
-              >
+              <a className="text-secondary border-bottom text-decoration-none">
                 Sign up
               </a>
               for free
@@ -140,16 +137,10 @@ const LoginModal = (props) => {
                 </span>
               </div>
               <div className="d-flex">
-                <a
-                  href=""
-                  className="btn btn-outline-secondary btn-block border-2x border mr-5 border-hover-secondary"
-                >
+                <a className="btn btn-outline-secondary btn-block border-2x border mr-5 border-hover-secondary">
                   <i className="fab fa-facebook-f mr-2"></i>Facebook
                 </a>
-                <a
-                  href=""
-                  className="btn btn-outline-secondary btn-block border-2x border mt-0 border-hover-secondary"
-                >
+                <a className="btn btn-outline-secondary btn-block border-2x border mt-0 border-hover-secondary">
                   <i className="fab fa-google mr-2"></i>Google
                 </a>
               </div>
@@ -165,10 +156,7 @@ const LoginModal = (props) => {
               <h4 className="fs-34 text-center mb-6">Sign Up</h4>
               <p className="text-center fs-16 mb-7">
                 Already have an account?
-                <a
-                  href=""
-                  className="text-secondary border-bottom text-decoration-none"
-                >
+                <a className="text-secondary border-bottom text-decoration-none">
                   Log in
                 </a>
               </p>
@@ -191,9 +179,7 @@ const LoginModal = (props) => {
                   onChange={(e) => passwordHandle(e)}
                 />
                 <div className="d-flex align-items-center justify-content-between mt-5 mb-4">
-                  <a href="" className="text-secondary">
-                    Forgot your password?
-                  </a>
+                  <a className="text-secondary">Forgot your password?</a>
                 </div>
                 <button
                   type="submit"
