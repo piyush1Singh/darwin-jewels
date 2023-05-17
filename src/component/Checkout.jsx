@@ -119,13 +119,13 @@ const Checkout = () => {
               </div>
               <div className="col-lg-8 pr-xl-15 order-lg-first form-control-01">
                 <p className="mb-2">
-                  Returning customer?{" "}
+                  Returning customer?
                   <a  data-toggle="modal" data-target="#sign-in">
                     Click here to login
                   </a>
                 </p>
                 <p>
-                  Have a coupon?{" "}
+                  Have a coupon?
                   <a
                     data-toggle="collapse"
                     href="#collapsecoupon"

@@ -115,7 +115,7 @@ const CategoryProduct = (props) => {
                 <li className="breadcrumb-item">
                   <a
                     className="text-decoration-none text-body"
-                    href="index.html"
+                    href="/"
                   >
                     Home
                   </a>
@@ -135,7 +135,7 @@ const CategoryProduct = (props) => {
             <h2 className="text-center mt-9 mb-8">Product</h2>
             <div className="d-flex justify-content-between align-items-center flex-wrap">
               <p className="fs-18 font-weight-500 my-lg-0 my-2">
-                We found{" "}
+                We found
                 <strong className="font-weight-bold text-secondary">95</strong>
                 products available for you
               </p>

@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="col-lg col-md-4 col-12 mb-7 mb-md-8 mb-lg-0">
               <h3 className="fs-20 mb-3 text-light">Company</h3>
               <p className="fs-14 lh-185 pr-xl-12">
-                Find a location nearest you. See{" "}
+                Find a location nearest you. See
                 <a className="text-light font-weight-600">
                   <u>Our Stores</u>
                 </a>
