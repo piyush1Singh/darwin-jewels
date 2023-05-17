@@ -2275,3 +2275,9 @@ body {
 .tab-pane{
   padding-top: 25px !important; 
 }
+.icon-button{
+  cursor: pointer;
+}
+.cl-red{
+  color: red;
+}

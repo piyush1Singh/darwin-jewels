@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineEye, AiOutlineStar, AiFillStar } from "react-icons/ai";
-import { BsHandbag, BsTypeH1 } from "react-icons/bs";
+import { BsHandbag} from "react-icons/bs";
 
 import ProductModal from "./ProductModal";
 import { Link } from "react-router-dom";
@@ -49,19 +49,28 @@ const FeatureProduct = () => {
   const ratings = (totalStar) => {
     if (totalStar == 1) {
       return (
-        <li className="list-inline-item fs-12 text-primary mr-0">
-          <AiFillStar />
-        </li>
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+            Reviews
+          </span>
+        </>
       );
     } else if (totalStar == 2) {
       return (
         <>
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
+            <span>Reviews</span>
           </li>
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+            Reviews
+          </span>
         </>
       );
     } else if (totalStar == 3) {
@@ -76,6 +85,9 @@ const FeatureProduct = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+            Reviews
+          </span>
         </>
       );
     } else if (totalStar == 4) {
@@ -93,6 +105,9 @@ const FeatureProduct = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+            Reviews
+          </span>
         </>
       );
     } else if (totalStar == 5) {
@@ -113,9 +128,34 @@ const FeatureProduct = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-3 lh-1">
+            Reviews
+          </span>
         </>
       );
     } else {
+      return (
+        <div className="d-flex">
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <span className="card-text fs-14 font-weight-600 cl-red mt-1 pl-1 lh-1">
+            No Reviews Found
+          </span>
+        </div>
+      );
     }
   };
   return (
@@ -181,9 +221,7 @@ const FeatureProduct = () => {
                                   className="preview ml-auto d-md-flex align-items-center justify-content-center cursor-pointer text-secondary bg-white hover-white bg-hover-secondary w-48px h-48px rounded-circle mb-2 d-none"
                                   data-original-title="Quick view"
                                 >
-                                  <span>
                                     <AiOutlineEye />
-                                  </span>
                                 </a>
                                 <a
                                   data-toggle="tooltip"
@@ -228,9 +266,6 @@ const FeatureProduct = () => {
                               <ul className="list-inline mb-0 lh-1">
                                 {ratings(value[6])}
                               </ul>
-                              <span className="card-text fs-14 font-weight-400 pl-2 lh-1">
-                                2947 reviews
-                              </span>
                             </div>
                           </div>
                         </div>

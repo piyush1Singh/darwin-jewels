@@ -439,7 +439,7 @@ const Product = () => {
                 required
                 onChange={handleCategory}
               >
-                <option value="" disabled selected>
+                <option defaultValue="" disabled selected>
                   Select Category
                 </option>
                 {category?.map((value, key) => (

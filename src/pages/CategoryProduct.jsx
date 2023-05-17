@@ -1,11 +1,36 @@
 import React, { useState, useEffect, useContext } from "react";
 import Sidebar from "../component/Sidebar";
 import { Link, useParams } from "react-router-dom";
-import { AiFillStar } from "react-icons/ai";
 import { CartContext } from "../CartContext";
+import ProductModal from "../component/ProductModal";
+import { AiOutlineEye, AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { BsHandbag } from "react-icons/bs";
 
 const CategoryProduct = (props) => {
-  console.log(props, "props");
+  const [productId, setProductId] = useState([]);
+
+  //Modal start for Product Modal
+  const [show, setShow] = useState(false);
+  //Bootstrap Modal Show
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  // Categories Product Modal
+  const showProductModal = async (value) => {
+    handleShow();
+    let url = await fetch(
+      "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Product/fetchproductbyId.php",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          id: value,
+        }),
+      }
+    );
+    let data = await url.json();
+    setProductId(data);
+  };
+
   const param = useParams();
   const [categories, setCategories] = useState();
   const fetchProductCategory = async () => {
@@ -36,19 +61,28 @@ const CategoryProduct = (props) => {
   const ratings = (totalStar) => {
     if (totalStar == 1) {
       return (
-        <li className="list-inline-item fs-12 text-primary mr-0">
-          <AiFillStar />
-        </li>
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+            Reviews
+          </span>
+        </>
       );
     } else if (totalStar == 2) {
       return (
         <>
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
+            <span>Reviews</span>
           </li>
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+            Reviews
+          </span>
         </>
       );
     } else if (totalStar == 3) {
@@ -63,6 +97,9 @@ const CategoryProduct = (props) => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+            Reviews
+          </span>
         </>
       );
     } else if (totalStar == 4) {
@@ -80,6 +117,9 @@ const CategoryProduct = (props) => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+            Reviews
+          </span>
         </>
       );
     } else if (totalStar == 5) {
@@ -100,9 +140,34 @@ const CategoryProduct = (props) => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-3 lh-1">
+            Reviews
+          </span>
         </>
       );
     } else {
+      return (
+        <div className="d-flex">
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <span className="card-text fs-14 font-weight-600 cl-red mt-1 pl-1 lh-1">
+            No Reviews Found
+          </span>
+        </div>
+      );
     }
   };
   return (
@@ -113,10 +178,7 @@ const CategoryProduct = (props) => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb breadcrumb-site py-0 d-flex justify-content-center">
                 <li className="breadcrumb-item">
-                  <a
-                    className="text-decoration-none text-body"
-                    href="/"
-                  >
+                  <a className="text-decoration-none text-body" href="/">
                     Home
                   </a>
                 </li>
@@ -427,20 +489,16 @@ const CategoryProduct = (props) => {
                                   title="Add to wishlist"
                                   className="add-to-wishlist ml-auto d-flex align-items-center justify-content-center text-secondary bg-white hover-white bg-hover-secondary w-40px h-40px rounded-circle mb-2"
                                 >
-                                  <svg className="icon icon-star-light fs-20"></svg>
+                                  <BsHandbag />
                                 </a>
                                 <a
+                                  onClick={() => showProductModal(value[0])}
                                   data-toggle="tooltip"
                                   data-placement="left"
                                   title="Quick view"
                                   className="preview ml-auto d-md-flex align-items-center justify-content-center cursor-pointer text-secondary bg-white hover-white bg-hover-secondary w-40px h-40px rounded-circle mb-2 d-none"
                                 >
-                                  <span
-                                    data-toggle="modal"
-                                    data-target="#quick-view"
-                                  >
-                                    <svg className="icon icon-eye-light fs-20"></svg>
-                                  </span>
+                                  <AiOutlineEye />
                                 </a>
                                 <a
                                   data-toggle="tooltip"
@@ -448,12 +506,7 @@ const CategoryProduct = (props) => {
                                   title="View Product"
                                   className="preview ml-auto d-md-flex align-items-center justify-content-center cursor-pointer text-secondary bg-white hover-white bg-hover-secondary w-40px h-40px rounded-circle mb-2 d-none"
                                 >
-                                  <span
-                                    data-toggle="modal"
-                                    data-target="#View Product"
-                                  >
-                                    <svg className="icon icon-shopping-bag-open-light fs-20"></svg>
-                                  </span>
+                                  <AiOutlineStar />
                                 </a>
                               </div>
                             </div>
@@ -496,15 +549,19 @@ const CategoryProduct = (props) => {
                             <ul className="list-inline mb-0 lh-1">
                               {ratings(value[6])}
                             </ul>
-                            <span className="card-text fs-14 font-weight-400 pl-2 lh-1">
-                              Reviews
-                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
+                // Sending data From Props To Show Modal And Close Modal Using
+                Product Id
+                <ProductModal
+                  show={show}
+                  productId={productId}
+                  handleClose={handleClose}
+                />
                 <nav className="pt-3">
                   <ul className="pagination justify-content-center align-items-center mb-0 fs-16 font-weight-600">
                     <li className="page-item fs-18 d-none d-sm-block">

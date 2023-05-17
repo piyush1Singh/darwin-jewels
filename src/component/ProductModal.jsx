@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import { CartContext } from "../CartContext";
+import { AiOutlineEye, AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { BsHandbag } from "react-icons/bs";
 
 const ProductModal = (props) => {
   const { quantity, saveToCart, setQuantity } = useContext(CartContext);
@@ -8,6 +10,118 @@ const ProductModal = (props) => {
   const handleAddToCart = (e) => {
     e.preventDefault();
     saveToCart(e, props.productId[0][0]);
+  };
+  const ratings = (totalStar) => {
+    if (totalStar == 1) {
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    } else if (totalStar == 2) {
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+            <span>Reviews</span>
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    } else if (totalStar == 3) {
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    } else if (totalStar == 4) {
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    } else if (totalStar == 5) {
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    } else {
+      return (
+        <div className="d-flex">
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <li>
+            <AiOutlineStar />
+          </li>
+          <span className="card-text fs-14 font-weight-600 cl-red mt-1 pl-1 lh-1">
+            No Reviews Found
+          </span>
+        </div>
+      );
+    }
   };
 
   return (
@@ -57,158 +171,149 @@ const ProductModal = (props) => {
               </div>
             </div>
             <div className="col-md-6 pl-xl-6 pr-xl-8">
-              <p className="d-flex align-items-center mb-3">
-                <span className="text-line-through">$39.00</span>
-                <span className="fs-18 text-secondary font-weight-bold ml-3">
-                  ₹ 3,58,755
-                </span>
-                <span className="badge badge-primary fs-16 ml-4 font-weight-600 px-3">
-                  20%
-                </span>
-              </p>
-              <h2 className="fs-24 mb-2">Geometric Fleur CZ Diamond Ring</h2>
-              <div className="d-flex align-items-center flex-wrap mb-3 lh-12">
-                <p className="mb-0 font-weight-600 text-secondary">4.86</p>
-                <ul className="list-inline d-flex mb-0 px-3 rating-result">
-                  <li className="list-inline-item mr-0">
-                    <span className="text-primary fs-12 lh-2">
-                      <i className="fas fa-star"></i>
+              {Array.isArray(props.productId) && props.productId.length ? (
+                <>
+                  <p className="d-flex align-items-center mb-3">
+                    <span className="text-line-through">
+                      {(
+                        parseInt((props.productId[0][4] / 100) * 10) +
+                        parseInt(props.productId[0][4])
+                      ).toLocaleString("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      })}
                     </span>
-                  </li>
-                  <li className="list-inline-item mr-0">
-                    <span className="text-primary fs-12 lh-2">
-                      <i className="fas fa-star"></i>
+                    <span className="fs-18 text-secondary font-weight-bold ml-3">
+                      {parseInt(props.productId[0][4]).toLocaleString("en-IN", {
+                        style: "currency",
+                        currency: "INR",
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0,
+                      })}
                     </span>
-                  </li>
-                  <li className="list-inline-item mr-0">
-                    <span className="text-primary fs-12 lh-2">
-                      <i className="fas fa-star"></i>
+                    <span className="badge badge-primary fs-16 ml-4 font-weight-600 px-3">
+                     10%
                     </span>
-                  </li>
-                  <li className="list-inline-item mr-0">
-                    <span className="text-primary fs-12 lh-2">
-                      <i className="fas fa-star"></i>
-                    </span>
-                  </li>
-                  <li className="list-inline-item mr-0">
-                    <span className="text-primary fs-12 lh-2">
-                      <i className="fas fa-star"></i>
-                    </span>
-                  </li>
-                </ul>
-                <a className="pl-3 border-left border-gray-2 text-body">
-                  Read 2947 reviews
-                </a>
-              </div>
-              <p className="mb-4 mr-xl-6">
-                A diamond ring is a type of jewelry that features one or more
-                diamonds mounted onto a band, usually made of precious metals
-                such as gold or platinum.
-              </p>
-              <p className="mb-2" />
-              <form>
-                <div className="form-group shop-swatch mb-4 d-flex align-items-center">
-                  <span className="font-weight-600 text-secondary mr-4">
-                    Size:
-                  </span>
-                  <ul className="list-inline d-flex justify-content-start mb-0">
-                    <li className="list-inline-item mr-2 selected font-weight-600">
-                      <a
-                        className="fs-14 p-2 lh-13 d-block swatches-item rounded text-decoration-none border"
-                        data-var="full size"
+                  </p>
+                  <h1 className="fs-24 mb-2">{props.productId[0][1]}</h1>
+                  <div className="d-flex align-items-center flex-wrap mb-3 lh-12">
+                    <ul className="list-inline d-flex mb-0 rating-result">
+                      {ratings(props.productId[0][6])}
+                    </ul>
+                  </div>
+                  <p className="mb-4 mr-xl-6">{props.productId[0][2]}</p>
+                  <p className="mb-2" />
+                  <form>
+                    <div className="form-group shop-swatch mb-4 d-flex align-items-center">
+                      <span className="font-weight-600 text-secondary mr-4">
+                        Size:
+                      </span>
+                      <ul className="list-inline d-flex justify-content-start mb-0">
+                        <li className="list-inline-item mr-2 selected font-weight-600">
+                          <a
+                            className="fs-14 p-2 lh-13 d-block swatches-item rounded text-decoration-none border"
+                            data-var="full size"
+                          >
+                            Full size
+                          </a>
+                        </li>
+                        <li className="list-inline-item font-weight-600">
+                          <a
+                            className="fs-14 p-2 lh-13 d-block swatches-item rounded text-decoration-none border"
+                            data-var="mini size"
+                          >
+                            Mini size
+                          </a>
+                        </li>
+                      </ul>
+                      <select
+                        name="swatches"
+                        className="form-select swatches-select d-none"
+                        aria-label="Default select example"
                       >
-                        Full size
-                      </a>
+                        <option selected value="full size">
+                          Full size
+                        </option>
+                        <option value="mini size">Mini size</option>
+                      </select>
+                    </div>
+                    <div className="row align-items-end no-gutters mx-n2">
+                      <div className="col-sm-4 form-group px-2 mb-6">
+                        <label
+                          className="text-secondary font-weight-600 mb-3"
+                          htmlFor="quickview-number"
+                        >
+                          Quantity:
+                        </label>
+                        <div className="input-group position-relative w-100">
+                          <a className="down position-absolute pos-fixed-left-center pl-4 z-index-2">
+                            <i className="far fa-minus"></i>
+                          </a>
+                          <input
+                            name="number"
+                            type="number"
+                            id="quickview-number"
+                            className="form-control w-100 px-6 text-center input-quality text-secondary h-60 fs-18 font-weight-bold border-0"
+                            minLength={1}
+                            onChange={(e) => setQuantity(e.target.value)}
+                            required
+                          />
+                          <a className="up position-absolute pos-fixed-right-center pr-4 z-index-2">
+                            <i className="far fa-plus"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div className="col-sm-8 mb-6 w-100 px-2">
+                        {Array.isArray(props.productId) &&
+                        props.productId.length ? (
+                          <button
+                            className="btn btn-lg fs-18 btn-secondary btn-block h-60 bg-hover-primary border-0"
+                            onClick={(e) =>
+                              handleAddToCart(e, props.productId[0][0])
+                            }
+                          >
+                            Add To Bag
+                          </button>
+                        ) : (
+                          <h1>No Id Found</h1>
+                        )}
+                      </div>
+                    </div>
+                  </form>
+                  <div className="d-flex align-items-center flex-wrap">
+                    <a className="text-decoration-none font-weight-bold fs-16 mr-6 d-flex align-items-center">
+                      <svg className="icon icon-star-light fs-20"></svg>
+                      <span className="ml-2">Add to wishlist</span>
+                    </a>
+                    <a className="text-decoration-none font-weight-bold fs-16 d-flex align-items-center">
+                      <svg className="icon icon-ShareNetwork"></svg>
+                      <span className="ml-2">Share</span>
+                    </a>
+                  </div>
+                  <ul className="list-unstyled border-top pt-5 mt-5">
+                    <li className="row mb-2">
+                      <span className="d-block col-4 col-lg-2 text-secondary font-weight-600 fs-14">
+                        Sku:
+                      </span>
+                      <span className="d-block col-8 col-lg-10 fs-14">
+                        SF09281
+                      </span>
                     </li>
-                    <li className="list-inline-item font-weight-600">
-                      <a
-                        className="fs-14 p-2 lh-13 d-block swatches-item rounded text-decoration-none border"
-                        data-var="mini size"
-                      >
-                        Mini size
-                      </a>
+                    <li className="row mb-2">
+                      <span className="d-block col-4 col-lg-2 text-secondary font-weight-600 fs-14">
+                        Categories:
+                      </span>
+                      <span className="d-block col-8 col-lg-10 fs-14">
+                        Makeup, Skincare
+                      </span>
                     </li>
                   </ul>
-                  <select
-                    name="swatches"
-                    className="form-select swatches-select d-none"
-                    aria-label="Default select example"
-                  >
-                    <option selected value="full size">
-                      Full size
-                    </option>
-                    <option value="mini size">Mini size</option>
-                  </select>
-                </div>
-                <div className="row align-items-end no-gutters mx-n2">
-                  <div className="col-sm-4 form-group px-2 mb-6">
-                    <label
-                      className="text-secondary font-weight-600 mb-3"
-                      htmlFor="quickview-number"
-                    >
-                      Quantity:
-                    </label>
-                    <div className="input-group position-relative w-100">
-                      <a className="down position-absolute pos-fixed-left-center pl-4 z-index-2">
-                        <i className="far fa-minus"></i>
-                      </a>
-                      <input
-                        name="number"
-                        type="number"
-                        id="quickview-number"
-                        className="form-control w-100 px-6 text-center input-quality text-secondary h-60 fs-18 font-weight-bold border-0"
-                        minLength={1}
-                        onChange={(e) => setQuantity(e.target.value)}
-                        required
-                      />
-                      <a className="up position-absolute pos-fixed-right-center pr-4 z-index-2">
-                        <i className="far fa-plus"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-8 mb-6 w-100 px-2">
-                    {Array.isArray(props.productId) &&
-                    props.productId.length ? (
-                      <button
-                        className="btn btn-lg fs-18 btn-secondary btn-block h-60 bg-hover-primary border-0"
-                        onClick={(e) =>
-                          handleAddToCart(e, props.productId[0][0])
-                        }
-                      >
-                        Add To Bag
-                      </button>
-                    ) : (
-                      <h1>No Id Found</h1>
-                    )}
-                  </div>
-                </div>
-              </form>
-              <div className="d-flex align-items-center flex-wrap">
-                <a className="text-decoration-none font-weight-bold fs-16 mr-6 d-flex align-items-center">
-                  <svg className="icon icon-star-light fs-20"></svg>
-                  <span className="ml-2">Add to wishlist</span>
-                </a>
-                <a className="text-decoration-none font-weight-bold fs-16 d-flex align-items-center">
-                  <svg className="icon icon-ShareNetwork"></svg>
-                  <span className="ml-2">Share</span>
-                </a>
-              </div>
-              <ul className="list-unstyled border-top pt-5 mt-5">
-                <li className="row mb-2">
-                  <span className="d-block col-4 col-lg-2 text-secondary font-weight-600 fs-14">
-                    Sku:
-                  </span>
-                  <span className="d-block col-8 col-lg-10 fs-14">SF09281</span>
-                </li>
-                <li className="row mb-2">
-                  <span className="d-block col-4 col-lg-2 text-secondary font-weight-600 fs-14">
-                    Categories:
-                  </span>
-                  <span className="d-block col-8 col-lg-10 fs-14">
-                    Makeup, Skincare
-                  </span>
-                </li>
-              </ul>
+                </>
+              ) : (
+                <h1>Something Gone Wrong</h1>
+              )}
             </div>
           </div>
         </div>
