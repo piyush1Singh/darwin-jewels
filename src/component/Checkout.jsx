@@ -10,6 +10,7 @@ const Checkout = () => {
   const [user_id, setUser_id] = useState(localStorage.getItem("user_id"));
 
   const fetchUserDetails = async () => {
+    // Send a POST request to the specified URL and pass the `user_id` as the request body
     let url = await fetch(
       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Checkout/fetchUserDetails.php",
       {
@@ -19,14 +20,22 @@ const Checkout = () => {
         }),
       }
     );
+
+    // Extract the JSON data from the response
     let data = await url.json();
+
+    // Log the `data` and the string "user_id" to the console
     console.log(data, "user_id");
   };
 
   useEffect(() => {
+    // Call the `fetchUserDetails` function
     fetchUserDetails();
+    // Call the `fetchData` function
     fetchData();
+    // Check if `login` is not equal to the string "true"
     if (login !== "true") {
+      // Navigate to the "/" route (presumably using a routing library)
       navigate("/");
     }
   }, [login]);
@@ -35,20 +44,31 @@ const Checkout = () => {
 
   const fetchData = async () => {
     try {
+      // Set the request options with the desired method and include credentials
       const requestOptions = {
         method: "POST",
         credentials: "include",
       };
+
+      // Send a fetch request to the specified URL with the defined request options
       const response = await fetch(
         "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Cart/fetchallCart.php",
         requestOptions
       );
+
+      // Extract the JSON data from the response
       const responseData = await response.json();
+
+      // Map over the response data and create a new array with selected properties
       const newArray = responseData.map((value) => ({
         id: value.id,
         quantity: value.quantity,
       }));
+
+      // Update the `cart` state with the newly created array
       setCart(newArray);
+
+      // Log the `cart` state to the console for debugging purposes
       console.log(cart, "setcart");
     } catch (error) {
       console.error(error);
@@ -76,7 +96,7 @@ const Checkout = () => {
                         </div>
                         <div className="media-body d-flex">
                           <div className="cart-price pr-6">
-                            <a  className="text-secondary pr-6">
+                            <a className="text-secondary pr-6">
                               Natural Coconut Cleansing Oil
                               <span className="text-body">x1</span>
                             </a>
@@ -120,7 +140,7 @@ const Checkout = () => {
               <div className="col-lg-8 pr-xl-15 order-lg-first form-control-01">
                 <p className="mb-2">
                   Returning customer?
-                  <a  data-toggle="modal" data-target="#sign-in">
+                  <a data-toggle="modal" data-target="#sign-in">
                     Click here to login
                   </a>
                 </p>
@@ -266,7 +286,6 @@ const Checkout = () => {
                   </label>
                   <div className="dropdown show lh-1 rounded mb-4">
                     <a
-                      
                       className="dropdown-toggle custom-dropdown-toggle text-decoration-none text-secondary p-3 position-relative d-block"
                       id="dropdownMenuButton"
                       data-toggle="dropdown"
@@ -279,24 +298,12 @@ const Checkout = () => {
                       className="dropdown-menu custom-dropdown-item"
                       aria-labelledby="dropdownMenuButton"
                     >
-                      <a className="dropdown-item" >
-                        Andorra
-                      </a>
-                      <a className="dropdown-item" >
-                        San Marino
-                      </a>
-                      <a className="dropdown-item" >
-                        Tunisia
-                      </a>
-                      <a className="dropdown-item" >
-                        Micronesia
-                      </a>
-                      <a className="dropdown-item" >
-                        Solomon Islands
-                      </a>
-                      <a className="dropdown-item" >
-                        Macedonia
-                      </a>
+                      <a className="dropdown-item">Andorra</a>
+                      <a className="dropdown-item">San Marino</a>
+                      <a className="dropdown-item">Tunisia</a>
+                      <a className="dropdown-item">Micronesia</a>
+                      <a className="dropdown-item">Solomon Islands</a>
+                      <a className="dropdown-item">Macedonia</a>
                     </div>
                   </div>
                 </div>

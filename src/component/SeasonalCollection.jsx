@@ -7,6 +7,7 @@ const SeasonalCollection = () => {
   let backgroundColor = {
     backgroundColor: " #EDF1F0",
   };
+
   return (
     <div>
       <section data-animated-id="4" style={border}>

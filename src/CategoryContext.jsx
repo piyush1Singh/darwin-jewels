@@ -17,6 +17,7 @@ const CategoryProvider = ({ children }) => {
   useEffect(() => {
     fetchCollection();
   }, []);
+
   return (
     <categoryContext.Provider value={{ category, setCategory }}>
       {children}

@@ -9,18 +9,26 @@ const LoginModal = (props) => {
   const [loginError, setLoginError] = useState("");
   const [registerMessage, setRegisterMessage] = useState("");
   const [registerClass, setRegisterClass] = useState("");
+
   const emailHandle = (e) => {
+    // Event handler for handling changes in the email input field
     setEmail(e.target.value);
   };
+
   const passwordHandle = (e) => {
+    // Event handler for handling changes in the password input field
     setPassword(e.target.value);
   };
 
   const login = async (e) => {
-    setLoginError("");
-    e.preventDefault();
+    // Asynchronous function to handle the login process
+    setLoginError(""); // Clear the login error message
+    e.preventDefault(); // Prevent the default form submission behavior
+
     if (email.length > 0 && password.length > 0) {
+      // Check if both email and password have been entered
       let url = await fetch(
+        // Send a fetch request to the login API endpoint
         "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Login-Register/login.php",
         {
           method: "POST",
@@ -30,27 +38,35 @@ const LoginModal = (props) => {
           }),
         }
       );
-      let data = await url.json();
+      let data = await url.json(); // Extract the JSON data from the response
+
       if (data.status == true) {
-        props.handleClose();
-        localStorage.setItem("login", true);
-        localStorage.setItem("user_id", data.user_id);
+        // If the login status is true (successful login)
+        props.handleClose(); // Close the login modal or perform any necessary action
+        localStorage.setItem("login", true); // Store the login status in the local storage
+        localStorage.setItem("user_id", data.user_id); // Store the user ID in the local storage
         return;
       } else {
-        setLoginError("Please Enter Valid Email And Password");
+        // If the login status is false (invalid login credentials)
+        setLoginError("Please Enter Valid Email And Password"); // Set the login error message
         return;
       }
     } else {
-      setLoginError("Please Enter Valid Email And Password");
+      // If either email or password is empty
+      setLoginError("Please Enter Valid Email And Password"); // Set the login error message
       return;
     }
   };
 
   const register = async (e) => {
-    setRegisterMessage("");
-    e.preventDefault();
+    // Asynchronous function to handle the registration process
+    setRegisterMessage(""); // Clear the registration message
+    e.preventDefault(); // Prevent the default form submission behavior
+
     if (email.length > 0 && password.length > 0) {
+      // Check if both email and password have been entered
       let url = await fetch(
+        // Send a fetch request to the registration API endpoint
         "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Login-Register/register.php",
         {
           method: "POST",
@@ -60,21 +76,25 @@ const LoginModal = (props) => {
           }),
         }
       );
-      let data = await url.json();
+      let data = await url.json(); // Extract the JSON data from the response
+
       if (data.status == true) {
+        // If the registration status is true (successful registration)
         setRegisterMessage(
-          "User Successfully Registered , Please Login To Proceed"
-        );
-        setRegisterClass("success");
+          "User Successfully Registered, Please Login To Proceed"
+        ); // Set the registration success message
+        setRegisterClass("success"); // Set the CSS class for styling the registration message
         return;
       } else {
-        setRegisterMessage("Please Enter Valid Email And Password");
-        setRegisterClass("danger");
+        // If the registration status is false (invalid registration data)
+        setRegisterMessage("Please Enter Valid Email And Password"); // Set the registration error message
+        setRegisterClass("danger"); // Set the CSS class for styling the registration message
         return;
       }
     } else {
-      setRegisterMessage("Please Enter Valid Email And Password");
-      setRegisterClass("danger");
+      // If either email or password is empty
+      setRegisterMessage("Please Enter Valid Email And Password"); // Set the registration error message
+      setRegisterClass("danger"); // Set the CSS class for styling the registration message
       return;
     }
   };

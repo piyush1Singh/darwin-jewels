@@ -17,7 +17,9 @@ const CategoryProduct = (props) => {
 
   // Categories Product Modal
   const showProductModal = async (value) => {
+    // Trigger the `handleShow()` function
     handleShow();
+    // Send a POST request to the specified URL and pass the `value` parameter as the request body
     let url = await fetch(
       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Product/fetchproductbyId.php",
       {
@@ -27,13 +29,22 @@ const CategoryProduct = (props) => {
         }),
       }
     );
+
+    // Extract the JSON data from the response
     let data = await url.json();
+
+    // Set the `productId` state variable with the extracted data
     setProductId(data);
   };
 
   const param = useParams();
+  // The `useParams` hook is used to extract the parameters from the current route. It returns an object containing the parameters. In this case, the `param` variable will store the parameters extracted from the route.
+
   const [categories, setCategories] = useState();
+  // The `categories` variable is defined using the `useState` hook. It initializes the state with an undefined value. The `setCategories` function is used to update the value of the `categories` state.
+
   const fetchProductCategory = async () => {
+    // Send a POST request to the specified URL and pass the `param.id` as the request body
     let url = await fetch(
       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Product/fetchProductbyCategories.php",
       {
@@ -43,11 +54,15 @@ const CategoryProduct = (props) => {
         }),
       }
     );
+    // Extract the JSON data from the response
     let data = await url.json();
+    // Update the `categories` state variable with the extracted data
     setCategories(data);
     console.log(data);
   };
+
   useEffect(() => {
+    // Call the `fetchProductCategory` function when the component mounts
     fetchProductCategory();
   }, []);
 

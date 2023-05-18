@@ -14,10 +14,16 @@ import LoginModal from "./LoginModal";
 
 const Sidebar = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
+  // State variable to control the visibility of the cart
+
   const [cart, setCart] = useState([]);
+  // State variable to store the cart data
 
   const fetchData = async () => {
+    // Async function to fetch cart data
     setShowCart(true);
+    // Set `showCart` state to true to display the cart
+
     try {
       const requestOptions = {
         method: "POST",
@@ -28,36 +34,50 @@ const Sidebar = ({ children }) => {
         requestOptions
       );
       const responseData = await response.json();
+      // Parse the response data as JSON
+
       const newArray = responseData.map((value) => ({
         id: value.id,
         quantity: value.quantity,
       }));
+      // Map the response data to a new array, extracting the `id` and `quantity` properties
+
       setCart(newArray);
+      // Set the `cart` state to the new array containing the cart data
       console.log(cart, "setcart");
+      // Output the `cart` state to the console
     } catch (error) {
       console.error(error);
+      // Log any errors that occur during the fetch operation
     }
   };
 
   const [show, setShow] = useState(false);
-  //Bootstrap Modal Show
+  // State variable to control the visibility of the Bootstrap modal
+
   const handleClose = () => setShow(false);
+  // Function to close the modal
+
   const handleShow = () => setShow(true);
+  // Function to show the modal
 
   const loginModal = () => {
     handleShow();
+    // Call the `handleShow` function to show the login modal
   };
 
-  //Login Dropdown State
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // State variable to control the visibility of the login dropdown
 
   const logout = () => {
     localStorage.removeItem("login");
     console.log("removed");
     return;
   };
+  // Function to handle the logout action by removing the "login" item from the localStorage
 
   const { category } = useCategory();
+  // Retrieve the `category` variable from the `useCategory` hook
 
   return (
     <div>
@@ -115,7 +135,7 @@ const Sidebar = ({ children }) => {
                   onMouseEnter={() => setIsDropdownOpen(true)}
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
-                  <NavDropdown.Item >
+                  <NavDropdown.Item>
                     <svg className="icon icon-user-light mr-2"></svg>
                     Profile
                   </NavDropdown.Item>

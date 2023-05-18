@@ -10,10 +10,12 @@ const CartSidebar = (props) => {
   const htmlRef = useRef("");
 
   const fetchProductById = async (incrementCart) => {
-    var newData = "";
-    let arr = [];
+    var newData = ""; // Initialize an empty string to store the generated HTML
+    let arr = []; // Initialize an empty array
     for (const value of props.cart || []) {
+      // Iterate over the `props.cart` array or an empty array if `props.cart` is falsy
       try {
+        // Send a POST request to the specified URL and pass the `value.id` as the request body
         let url = await fetch(
           "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Product/fetchproductbyid.php",
           {
@@ -22,15 +24,19 @@ const CartSidebar = (props) => {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              id: value.id, // Fixed: use value.id instead of value
+              id: value.id, // Use value.id to specify the product ID for the request
             }),
           }
         );
+
+        // Extract the JSON data from the response
         let data = await url.json();
         console.log(data);
-        // console.log(data, "data");
+
         for (let index = 0; index < data.length; index++) {
+          // Iterate over the `data` array
           newData +=
+            // Generate HTML string based on the retrieved data
             "<div className='mb-4 d-flex'>" +
             "<a href='' className='d-flex align-items-center mr-2 text-muted'><i className='fal fa-times'></i></a>" +
             "<div className='media w-100'>" +
@@ -82,17 +88,17 @@ const CartSidebar = (props) => {
             " </div>" +
             " </div>";
         }
-
-        //Saving Cart Data In htmlref if New Product Added In Cart
+        // Saving Cart Data In htmlref if New Product Added In Cart
         htmlRef.current.innerHTML = newData;
       } catch (error) {
         console.error(error);
       }
     }
-    return newData;
+    return newData; // Return the generated HTML string
   };
 
   useEffect(() => {
+    // Call the `fetchProductById` function with the `incrementCart` parameter
     fetchProductById(incrementCart);
   }, [fetchProductById]);
 

@@ -2,14 +2,22 @@ import React, { useState, useEffect } from "react";
 
 const Collection = () => {
   const [collection, setCollection] = useState();
+
   const fetchCollection = async () => {
+    // Send a fetch request to the specified URL
     let url = await fetch(
       "http://localhost/darwin-jewels/Admin-panel/Api-Calls/Featured-collection/fetchallCollection.php"
     );
+
+    // Extract the JSON data from the response
     let data = await url.json();
+
+    // Update the `collection` state with the retrieved data
     setCollection(data);
   };
+
   useEffect(() => {
+    // Call the `fetchCollection` function when the component mounts
     fetchCollection();
   }, []);
 
