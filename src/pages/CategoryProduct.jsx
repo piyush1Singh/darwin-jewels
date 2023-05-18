@@ -537,7 +537,7 @@ const CategoryProduct = (props) => {
                         </div>
                         <div className="card-body pt-4 text-center px-0">
                           <p className="card-text font-weight-bold fs-16 mb-1 text-secondary">
-                            <span className="fs-13 font-weight-500 text-decoration-through text-body pr-1">
+                            <span className="fs-13 font-weight-500 text-line-through text-decoration-through text-body pr-1">
                               {(
                                 parseInt((value[4] / 100) * 10) +
                                 parseInt(value[4])

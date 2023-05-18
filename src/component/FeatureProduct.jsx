@@ -216,7 +216,7 @@ const FeatureProduct = () => {
                           </div>
                           <div className="card-body px-0 pt-4 text-center">
                             <p className="card-text font-weight-bold fs-16 mb-1 text-secondary">
-                              <span className="fs-13 font-weight-500 text-decoration-through text-body pr-1 text-crossed">
+                              <span className="fs-13 font-weight-500 text-line-through text-decoration-through text-body pr-1 text-crossed">
                                 {(
                                   parseInt((value[4] / 100) * 10) +
                                   parseInt(value[4])
