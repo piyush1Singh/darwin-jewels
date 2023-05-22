@@ -50,7 +50,7 @@ const ProductDescription = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
@@ -66,7 +66,7 @@ const ProductDescription = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
@@ -84,12 +84,60 @@ const ProductDescription = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
       );
     }
+    else if (totalStar == 4) {
+      // If `totalStar` is 4, render three filled stars
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    }
+    else if (totalStar == 5) {
+      // If `totalStar` is 5, render three filled stars
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    }
+    
     // ... (similar conditional blocks for 4 and 5 stars omitted for brevity) ...
     else {
       // If `totalStar` is not 1, 2, 3, 4, or 5, render a message indicating no reviews found
@@ -117,6 +165,7 @@ const ProductDescription = () => {
       );
     }
   };
+
 
   return (
     <Sidebar>
@@ -189,15 +238,10 @@ const ProductDescription = () => {
                 </p>
                 <h2 className="fs-24 mb-2">{productDesc[0][1]}</h2>
                 <div className="d-flex align-items-center flex-wrap mb-3 lh-12">
-                  <p className="mb-0 font-weight-600 text-secondary">
-                    {productDesc[0][5]}
-                  </p>
-                  <ul className="list-inline d-flex mb-0 px-3 rating-result">
+                  <ul className="list-inline d-flex mb-0 rating-result">
                     {ratings(productDesc[0][5])}
                   </ul>
-                  <a className="pl-3 border-left border-gray-2 text-body">
-                    Read 2947 reviews
-                  </a>
+                 
                 </div>
                 <p className="mb-5">{productDesc[0][2]}</p>
 

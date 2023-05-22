@@ -25,7 +25,7 @@ const ProductModal = (props) => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
@@ -41,7 +41,7 @@ const ProductModal = (props) => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
@@ -59,12 +59,60 @@ const ProductModal = (props) => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
       );
     }
+    else if (totalStar == 4) {
+      // If `totalStar` is 4, render three filled stars
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    }
+    else if (totalStar == 5) {
+      // If `totalStar` is 5, render three filled stars
+      return (
+        <>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <li className="list-inline-item fs-12 text-primary mr-0">
+            <AiFillStar />
+          </li>
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
+            Reviews
+          </span>
+        </>
+      );
+    }
+    
     // ... (similar conditional blocks for 4 and 5 stars omitted for brevity) ...
     else {
       // If `totalStar` is not 1, 2, 3, 4, or 5, render a message indicating no reviews found
