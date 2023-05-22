@@ -5,12 +5,8 @@ header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json');
 $json = file_get_contents('php://input');
 $json = json_decode($json);
-// print_r($json->id);die();
 
-// $res=$_POST;
-// $res=json_encode($res);
-// $res=json_decode($res);
-// print_r($res);die();
+
 if (isset($json->id)) {
     $id = $json->id;
 

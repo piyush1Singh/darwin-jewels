@@ -17,9 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit();
 }
 session_start();
-// session_destroy();
-// exit;
-
 
 $json = file_get_contents('php://input');
 $json = json_decode($json);
@@ -30,16 +27,8 @@ function checkifempty($arr, $json)
             $_SESSION['cart'][$i]['quantity'] += $json->quantity;
             return ["status" => false, "index" => $i];
         }
-        // print_r($arr[$i]['id']);
     }
-    // foreach($arr as $newarr){
-    //     if($json->id==$newarr['id']){
-    //         echo "id present";
-    //         return false;
-    //     }
 
-    //     // print_r($newarr);
-    // }
     array_push($_SESSION['cart'], [
         'id' => $json->id,
         'quantity' => $json->quantity,
@@ -47,11 +36,6 @@ function checkifempty($arr, $json)
 }
 if (!empty($_SESSION)) {
     checkifempty($_SESSION['cart'], $json);
-
-    // array_push($_SESSION['cart'], [
-    //     'id' => $json->id,
-    //     'quantity' => $json->quantity,
-    // ]);
     print_r(json_encode($_SESSION['cart']));
 } else {
 

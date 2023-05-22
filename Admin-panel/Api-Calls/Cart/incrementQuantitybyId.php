@@ -17,9 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit(0);
 }
 session_start();
-// session_destroy();
-// exit;
-
 
 $json = file_get_contents('php://input');
 $json = json_decode($json);
