@@ -166,7 +166,6 @@ const ProductDescription = () => {
     }
   };
 
-
   return (
     <Sidebar>
       {productDesc != undefined ? (

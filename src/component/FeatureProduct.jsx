@@ -69,7 +69,7 @@ const FeatureProduct = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
@@ -85,7 +85,7 @@ const FeatureProduct = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
@@ -103,7 +103,7 @@ const FeatureProduct = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
@@ -125,7 +125,7 @@ const FeatureProduct = () => {
           <li className="list-inline-item fs-12 text-primary mr-0">
             <AiFillStar />
           </li>
-          <span className="card-text fs-14 font-weight-400 pl-2 mt-2 lh-1">
+          <span className="card-text fs-14 font-weight-400 pl-2 mt-0 lh-1">
             Reviews
           </span>
         </>
@@ -184,7 +184,6 @@ const FeatureProduct = () => {
       );
     }
   };
-
   return (
     <div>
       <section
